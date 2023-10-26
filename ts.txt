@@ -1,0 +1,4 @@
+npx create-react-app 파일명 --template typescript
+tsrafc=>자동생성
+
+타입스크립트

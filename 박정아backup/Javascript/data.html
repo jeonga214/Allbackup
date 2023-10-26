@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script defer src="./스크립트문서.js"></script> -->
+    <!-- defer(속성)를 넣어야 밑에 내용 인식후 실행 -->
+</head>
+<body>
+
+    <div class="div"> 선택자 </div>
+    <script>
+        // 1. 모든 리소스 로드후 실행
+        // 2. 콘텐츠 로드후 실행
+
+
+        // Java: document.querySelector('div');
+        // jQuery: $('div')
+        // CSS: div{}
+
+
+        // document.querySelector('div');
+        // document.getElementsByTagName('div');
+        // document.getElementsByCLassName('div');
+        // document.getElementById('div');
+
+
+        // <div class="div aaa"> 선택자 </div>
+        
+        // div의 내용을 주세요. (결과=>선택자)
+        // document.querySelector('div').명령;
+
+        // div의 내용을 주세요. (결과=>div aaa)
+        // document.querySelector('div').클래스네임;
+
+        // div의 내용을 갱신해 주세요.(선택자라는 문자 삭제 => 갱신할내용 똔느 명령)
+        // document.querySelector('div').명령 = '갱신할내용 또는 명령';
+
+        // =이 들어가면 원래 값에서 변경값으로 내용 변경된 결과
+        // 명령뒤에 아무것도 없으면 원래 값이 결과값으로 나옴
+        const element = document.querySelector('div');
+
+        element.innerText = 1000;
+        element.style ='color:red'
+        element.className = 'test'
+
+        let num = 1000;
+        element.onclick = function(){
+            element.innerText = num*2;
+        }
+        // div 클릭하면 2000으로 변경
+
+        console.log(
+        );
+
+    </script>
+
+    <script>
+        // 스코프 (영역내에서만 적용)
+        // => {로컬변수 => 중가로 안에서 선언}
+        // => 글로벌변수 => 스크립트 상단에서 선언(중가로 밖)
+
+        let a;
+        a = '100';
+        a += 100;
+
+        console.log(
+            '김수민의 포인트는 ' + a + '입니다'
+            );
+        console.log(
+            `김수민의 포인트는 ${a}입니다.`
+            );
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 1. 스크롤 방향 체크
+    2. 스크롤값 (pageYoffset / pageXoffset)
+    3. 오브젝트정보 (getBoundingClientRect, offsetTop...)
+    4. 스크롤이 있는 오브젝트 크기 (scrollWidth, scrollHeight)
+
+    5. 일정시간 후 실행 (setTimeOut / clearTimeOut)
+    6. 이벤트 추가 addEventListener(function(){})
+    7. wheel / event.wheelDelta(내림-120, 올림+120) -->
+
+    <style>
+        article{
+            width: 50%; margin: 200px auto;
+            border: 1px solid #000;
+            padding: 60px;
+        }
+    </style>
+
+    <article class="ex1">
+        <h2>스크롤 방향 체크</h2>
+        <div>스크롤 up,down시 클래스를 넣거나 삭제하시오.</div>
+    </article>
+
+    <script>
+        const ex1Div = document.querySelector('.ex1 div');
+
+        let pos = {y:0,y2:0,status:true};
+        window.addEventListener('scroll',function(){
+            pos.y = window.pageYOffset;
+            pos.status = (pos.y > pos.y2) ? true : false;
+            pos.y2 = pos.y;
+            if(pos.status){
+                ex1Div.classList.add('active');
+            }else{
+                ex1Div.classList.remove('active');
+            }
+            
+        })
+    </script>
+
+    <article class="ex2">
+        <h2>스크롤 pageYoffset 활용</h2>
+        <div>텍스트의 크기를 키우거나 줄이시오.</div>
+        <style>
+            .ex2>div{font-size: 15px; transition: 1s;}
+            .ex2>div.active{font-size: 25px;}
+        </style>
+    </article>
+
+    <script>
+        const ex2Div = document.querySelector('.ex2 div');
+        
+        let pos2 = {y:0,y2:0,status:true};
+        window.addEventListener('scroll',function(){
+            pos2.y = window.pageYOffset;
+            pos2.status = (pos2.y > pos2.y2) ? true : false;
+            pos2.y2 = pos.y;
+            if(pos2.status){
+                ex2Div.classList.add('active');
+            }else{
+                ex2Div.classList.remove('active');
+            }
+        })
+
+
+    </script>
+
+    <article class="ex3">
+        <h2>스크롤 getBoundingClientRect</h2>
+        <div>스크롤시 뷰포트화면에 해당 내용이 나오면 애니메이션을 주시오.(style활용)</div>
+        <style>
+            .ex3 div.active{animation: name 3s forwards;}
+            @keyframes name{
+                0%{transform: translateX(-100%);}
+                100%{transform: translateX(0);}
+            }
+        </style>
+    </article>
+
+    <script>
+        const ex3Div = document.querySelector('.ex3 div');
+
+        window.addEventListener('scroll',function(){
+            console.log(ex3Div.getBoundingClientRect().top);
+            if(ex3Div.getBoundingClientRect().top < 980){
+                ex3Div.classList.add('active');
+            }
+        })
+    </script>
+
+
+    <article class="ex4">
+        <h2>ex4) 오브젝트 scrollWidth</h2>
+        <div> 
+            <p>
+                1. 스크롤 오브젝트(div)의 전체 크기를 구하시오.<br>
+                2. li태그에 width값을 넣으하시오.(전체크기 3등분)
+            </p>
+            <ul><li>01</li><li>02</li><li>03</li></ul>
+        </div>
+        <style>
+            .ex4 div{overflow-x:scroll;}
+            .ex4 p{width:1900px}
+            .ex4 ul{
+                display: flex; 
+                margin:0; padding:0; 
+                list-style: none;
+            }
+            .ex4 ul li{
+                flex-shrink: 0;
+                display:inherit; 
+                align-items: center;
+                border:1px solid #000; height:200px;}
+        </style>
+    </article>
+
+    <script>
+        const ex4Div = document.querySelector('.ex4 div'),
+        ex4Li = document.querySelectorAll('.ex4 ul li');
+
+        console.log(ex4Div.scrollWidth);
+
+
+        ex4Li.forEach(function(v,k){
+            v.style=`width:${ex4Div.scrollWidth/3}px`;
+        })
+
+
+
+    </script>
+
+    <article class="ex5">
+        <h2>ex5) 일정시간 후 실행(setTimeOut) </h2>
+        <div>
+            뷰포트화면에 해당 콘텐츠가 보이면 
+            figure 자손으로 이미지 3개를 출력하시오.(단 0.3초 간격으로 출력)
+            <figure></figure>
+        </div>
+        <style>
+            .ex5 figure{margin:0;}
+            .ex5 figure img{width:200px;}
+        </style>
+    <script>
+        const ex5 = document.querySelector('.ex5 figure');
+        for(let i=0; i<3; i++){
+            setTimeout(function(){
+                ex5.innerHTML += '<img src="./img/01.jpg">'
+            },300*i)
+        }
+    </script>
+    </article>
+    
+
+</body>
+</html>

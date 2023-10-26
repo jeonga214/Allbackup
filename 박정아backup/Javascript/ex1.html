@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let html = 90, css = 100, js = 30;
+        let total = html+css+js;
+
+        // 토탈값이 200이상이면 합격 / 불합격
+
+            if(total>=200){
+                console.log('합격');
+            }else{
+                console.log('불합격');
+            }
+
+            // 1. 평균 90이상 A등급
+            // 1. 평균 80이상 ~ 90미만 B등급
+            // 1. 평균 80미만 C등급
+
+            // 각등급을 콘솔창에 출력하시오.
+
+        let avg = total/3;
+
+            if(avg>=90){
+                console.log('A등급');
+            }else if(avg>=80 && avg<90){
+                console.log('B등급');
+            }else{
+                console.log('C등급');
+            }
+
+    </script>
+
+    <script>
+        let age = prompt('당신의 나이는 몇 살?')
+        console.log(age);
+
+        // 19이상이면 => '어서오세요 환영합니다'
+        // 19미만이면 => 'X'
+
+        // if(age>=19){
+        //     console.log('어서오세요 환영합니다');
+        // }else{console.log('X');}
+
+        let msg;
+
+        if(age>=19){
+        msg = '어서오세요 환영합니다';
+        }else{msg ='X';}
+
+        console.log(msg);
+
+
+
+    </script>
+</body>
+</html>

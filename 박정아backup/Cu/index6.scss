@@ -1,0 +1,541 @@
+@import "_reset";
+
+.content_index{
+    >div{
+        display: none;
+        .search{
+            margin-top: 80px;
+            .search-1{
+                width: $intro-wid;
+                margin: 0 auto;
+                >div{
+                    text-align: right;
+                    margin: 0 auto 15px;
+                    >select{
+                        width: 80px; height: 30px;
+                        border: 1px solid #b4b4b4;
+                        line-height: 30px;
+                        outline: none;
+                    }
+                    >input{
+                        height: 30px;
+                        border: 1px solid #b4b4b4;
+                        outline: none;
+                    }
+                    >a{
+                        >input{
+                            height: 30px;
+                            border: 1px solid #b4b4b4;
+                            outline: none;
+                            cursor: pointer;
+                        }
+                        >input:hover{
+                            text-decoration: underline;
+                            text-underline-offset: 2px;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .event{
+            margin-bottom: 150px;
+            .event_content{
+                width: $intro-wid;
+                margin: 0 auto;
+                border-top: 1px solid #b4b4b4;
+                .event_table{
+                    width: 100%;
+                    border-collapse: collapse;
+                    tr{
+                        margin: 0; padding: 0;
+                        >td{
+                            padding: 15px 0;
+                            border-bottom: 1px solid #b4b4b4;
+                        }
+                        >td:nth-of-type(1){
+                            >a{
+                                >img{
+                                    height: 120px;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+                        >td:nth-of-type(2){
+                            width: 100%;
+                            padding-left: 35px;
+                            >div{
+                                >a{
+                                    >b{
+                                        color: #000;
+                                        font-size: 15px;
+                                        letter-spacing: 0.3px;
+                                        line-height: 30px;
+                                    }
+                                    >b:hover{
+                                        text-decoration: underline;
+                                    }
+                                    >p{
+                                        color: #323232;
+                                        font-size: 13px;
+                                    }
+                                    >p:hover{
+                                        text-decoration: underline;
+                                    }
+                                }
+                                >p{
+                                    padding-top: 16px;
+                                    color: #999;
+                                    font-size: 11px;
+                                    letter-spacing: 0.13px;
+                                    line-height: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .event_num{
+                width: 100%;
+                margin-top: 20px;
+                .button_skroll{
+                    width: $intro-wid;
+                    margin: 0 auto;
+                    @include flex;
+                    >nav{
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        >a{
+                            >button{
+                                cursor: pointer;
+                                width: 30px; height: 30px;
+                                margin: 0 1px;
+                                border: 1px solid #dcdcdc;
+                                font-size: 11px;
+                                color: #000;
+                            }
+                        }
+                    }
+                    >a{
+                        >button{
+                            cursor: pointer;
+                            width: 30px; height: 30px;
+                            margin: 0 2px;
+                            border: 1px solid #dcdcdc;
+                            font-size: 11px;
+                            color: #000;
+                            background-color: #fff;
+                        }
+                        >button:hover{
+                            background-color: #777;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    >div.active{
+        display: block;
+    }
+}
+
+
+
+// -------------------------------480-----------------------------------
+@media(max-width:480px){
+    $m-wid : 100%;
+    $intro-wid: 100%;
+
+    .content_index{
+        >div{
+            display: none;
+            .search{
+                width: 90%;
+                margin: 80px auto 0;
+                .search-1{
+                    width: $intro-wid;
+                    margin: 0 auto;
+                    >div{
+                        text-align: right;
+                        margin: 0 auto 15px;
+                        >select{
+                            width: 80px; height: 30px;
+                            border: 1px solid #b4b4b4;
+                            line-height: 30px;
+                            outline: none;
+                        }
+                        >input:nth-of-type(1){
+                            height: 30px;
+                            border: 1px solid #b4b4b4;
+                            outline: none;
+                        }
+                        >input:nth-of-type(2){
+                            height: 30px;
+                            border: 1px solid #b4b4b4;
+                            outline: none;
+                            cursor: pointer;
+                        }
+                        >input:nth-of-type(2):hover{
+                            text-decoration: underline;
+                            text-underline-offset: 2px;
+                        }
+                    }
+                }
+            }
+            
+            .event{
+                width: 90%;
+                margin: 0 auto 150px;
+                .event_content{
+                    width: $intro-wid;
+                    margin: 0 auto;
+                    border-top: 1px solid #b4b4b4;
+                    .event_table{
+                        width: 100%;
+                        border-collapse: collapse;
+                        tr{
+                            margin: 0; padding: 0;
+                            >td{
+                                padding: 15px 0;
+                                border-bottom: 1px solid #b4b4b4;
+                            }
+                            >td:nth-of-type(1){
+                                >a{
+                                    >img{
+                                        height: 100px;
+                                        object-fit: cover;
+                                    }
+                                }
+                            }
+                            >td:nth-of-type(2){
+                                width: 100%;
+                                padding-left: 15px;
+                                >div{
+                                    >a{
+                                        >b{
+                                            color: #000;
+                                            font-size: 13px;
+                                            letter-spacing: 0.3px;
+                                            line-height: 30px;
+                                        }
+                                        >p{
+                                            color: #323232;
+                                            font-size: 10px;
+                                        }
+                                    }
+                                    >p{
+                                        padding-top: 16px;
+                                        color: #999;
+                                        font-size: 10px;
+                                        letter-spacing: 0.13px;
+                                        line-height: 30px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .event_num{
+                    width: 100%;
+                    margin-top: 20px;
+                    .button_skroll{
+                        width: $intro-wid;
+                        margin: 0 auto;
+                        @include flex;
+                        >nav{
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            >button{
+                                width: 30px; height: 30px;
+                                margin: 0 1px;
+                                border: 1px solid #dcdcdc;
+                                font-size: 11px;
+                                color: #000;
+                            }
+                        }
+                        >button{
+                            width: 30px; height: 30px;
+                            margin: 0 2px;
+                            border: 1px solid #dcdcdc;
+                            font-size: 11px;
+                            color: #000;
+                            background-color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        >div.active{
+            display: block;
+        }
+    }
+}
+
+
+
+// -------------------------------481~767-------------------------------
+
+@media (min-width:481px) and (max-width:767px){
+    $m-wid : 100%;
+    $intro-wid: 100%;
+
+    .content_index{
+        >div{
+            display: none;
+            .search{
+                width: 90%;
+                margin: 80px auto 0;
+                .search-1{
+                    width: $intro-wid;
+                    margin: 0 auto;
+                    >div{
+                        text-align: right;
+                        margin: 0 auto 15px;
+                        >select{
+                            width: 80px; height: 30px;
+                            border: 1px solid #b4b4b4;
+                            line-height: 30px;
+                            outline: none;
+                        }
+                        >input:nth-of-type(1){
+                            height: 30px;
+                            border: 1px solid #b4b4b4;
+                            outline: none;
+                        }
+                        >input:nth-of-type(2){
+                            height: 30px;
+                            border: 1px solid #b4b4b4;
+                            outline: none;
+                            cursor: pointer;
+                        }
+                        >input:nth-of-type(2):hover{
+                            text-decoration: underline;
+                            text-underline-offset: 2px;
+                        }
+                    }
+                }
+            }
+            
+            .event{
+                width: 90%;
+                margin: 0 auto 150px;
+                .event_content{
+                    width: $intro-wid;
+                    margin: 0 auto;
+                    border-top: 1px solid #b4b4b4;
+                    .event_table{
+                        width: 100%;
+                        border-collapse: collapse;
+                        tr{
+                            margin: 0; padding: 0;
+                            >td{
+                                padding: 15px 0;
+                                border-bottom: 1px solid #b4b4b4;
+                            }
+                            >td:nth-of-type(1){
+                                >a{
+                                    >img{
+                                        height: 120px;
+                                        object-fit: cover;
+                                    }
+                                }
+                            }
+                            >td:nth-of-type(2){
+                                width: 100%;
+                                padding-left: 35px;
+                                >div{
+                                    >a{
+                                        >b{
+                                            color: #000;
+                                            font-size: 13px;
+                                            letter-spacing: 0.3px;
+                                            line-height: 30px;
+                                        }
+                                        >p{
+                                            color: #323232;
+                                            font-size: 10px;
+                                        }
+                                    }
+                                    >p{
+                                        padding-top: 16px;
+                                        color: #999;
+                                        font-size: 10px;
+                                        letter-spacing: 0.13px;
+                                        line-height: 30px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .event_num{
+                    width: 100%;
+                    margin-top: 20px;
+                    .button_skroll{
+                        width: $intro-wid;
+                        margin: 0 auto;
+                        @include flex;
+                        >nav{
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            >button{
+                                width: 30px; height: 30px;
+                                margin: 0 1px;
+                                border: 1px solid #dcdcdc;
+                                font-size: 11px;
+                                color: #000;
+                            }
+                        }
+                        >button{
+                            width: 30px; height: 30px;
+                            margin: 0 2px;
+                            border: 1px solid #dcdcdc;
+                            font-size: 11px;
+                            color: #000;
+                            background-color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        >div.active{
+            display: block;
+        }
+    }
+}
+
+
+
+// -------------------------------768~1279------------------------------
+
+@media (min-width:768px) and (max-width:1279px){
+    $m-wid : 768px;
+    $intro-wid: 576px;
+
+    .content_index{
+        >div{
+            display: none;
+            .search{
+                margin-top: 80px;
+                .search-1{
+                    width: $intro-wid;
+                    margin: 0 auto;
+                    >div{
+                        text-align: right;
+                        margin: 0 auto 15px;
+                        >select{
+                            width: 80px; height: 30px;
+                            border: 1px solid #b4b4b4;
+                            line-height: 30px;
+                            outline: none;
+                        }
+                        >input:nth-of-type(1){
+                            height: 30px;
+                            border: 1px solid #b4b4b4;
+                            outline: none;
+                        }
+                        >input:nth-of-type(2){
+                            height: 30px;
+                            border: 1px solid #b4b4b4;
+                            outline: none;
+                            cursor: pointer;
+                        }
+                        >input:nth-of-type(2):hover{
+                            text-decoration: underline;
+                            text-underline-offset: 2px;
+                        }
+                    }
+                }
+            }
+            
+            .event{
+                margin-bottom: 150px;
+                .event_content{
+                    width: $intro-wid;
+                    margin: 0 auto;
+                    border-top: 1px solid #b4b4b4;
+                    .event_table{
+                        width: 100%;
+                        border-collapse: collapse;
+                        tr{
+                            margin: 0; padding: 0;
+                            >td{
+                                padding: 15px 0;
+                                border-bottom: 1px solid #b4b4b4;
+                            }
+                            >td:nth-of-type(1){
+                                >a{
+                                    >img{
+                                        height: 120px;
+                                        object-fit: cover;
+                                    }
+                                }
+                            }
+                            >td:nth-of-type(2){
+                                width: 100%;
+                                padding-left: 35px;
+                                >div{
+                                    >a{
+                                        >b{
+                                            color: #000;
+                                            font-size: 15px;
+                                            letter-spacing: 0.3px;
+                                            line-height: 30px;
+                                        }
+                                        >p{
+                                            color: #323232;
+                                            font-size: 13px;
+                                        }
+                                    }
+                                    >p{
+                                        padding-top: 16px;
+                                        color: #999;
+                                        font-size: 11px;
+                                        letter-spacing: 0.13px;
+                                        line-height: 30px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .event_num{
+                    width: 100%;
+                    margin-top: 20px;
+                    .button_skroll{
+                        width: $intro-wid;
+                        margin: 0 auto;
+                        @include flex;
+                        >nav{
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            >button{
+                                width: 30px; height: 30px;
+                                margin: 0 1px;
+                                border: 1px solid #dcdcdc;
+                                font-size: 11px;
+                                color: #000;
+                            }
+                        }
+                        >button{
+                            width: 30px; height: 30px;
+                            margin: 0 2px;
+                            border: 1px solid #dcdcdc;
+                            font-size: 11px;
+                            color: #000;
+                            background-color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        >div.active{
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+@mixin reset {margin:0;padding:0; @content;}
+@mixin flex($x:center,$y:center){
+    display:flex; justify-content: $x; align-items: $y; @content;
+}
+@mixin font($z:'400',$d:'16px') {font-weight: $z;font-size: $d;}
+
+$m-wid : 1400px;

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <article>
+        <h2>intersectionObserver</h2>
+        <div class="btn"></div>
+        <style>
+            .btn{height: 500px; overflow-y: scroll;}
+            .btn::-webkit-scrollbar{display: none;}
+            button{
+                width: 150px; display: block;
+                margin: 20px 0;
+                transform: translateX(100%); opacity: 0;
+                transition: 1s;
+            }
+            button.on{transform: translateX(0); opacity: 1;}
+        </style>
+    </article>
+
+    <script>
+        const elBtn = document.querySelector('.btn');
+
+        for(let i=0; i<100; i++ ){
+            let button = document.createElement('button');
+            button.append(`테스트 결과물 ${i}`);
+            elBtn.append(button);
+
+        }
+
+        const buttons = document.querySelectorAll('.btn button');
+
+        function contents(entries,observer){
+            entries.forEach(function(entry){
+                console.log(entry);
+                if(entry.isIntersecting){
+                    entry.target.classList.add('on')
+                    observer.unobserve(entry.target);
+                }else{
+                    // entry.target.classList.remove('on')
+                }
+            })
+        }
+
+        let opt = {
+            root:elBtn,
+            rootMargin:'100px',
+            threshold:0.5
+        }
+
+        const intersection = new IntersectionObserver(contents,opt);
+        buttons.forEach(function(btn){
+            intersection.observe(btn);
+        })
+    
+
+        // for(let i=0; i<100; i++ ){
+            //1번째방법
+        //     let button = document.createElement('button');
+        //     button.append(`테스트 결과물 ${i}`);
+        //     elBtn.append(button);
+            //2번째방법
+        //     elBtn.innerHTML += `<button>테스트 결과물 ${i}</button>`;
+        // }
+    </script>
+</body>
+</html>

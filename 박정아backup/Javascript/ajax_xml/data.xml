@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+    <item>
+        <detail> images/fulls/01.jpg</detail>
+        <thumb>images/thumbs/01.jpg</thumb>
+        <name>Magna feugiat lorem</name>
+    </item>
+    <item>
+        <detail> images/fulls/02.jpg</detail>
+        <thumb>images/thumbs/02.jpg</thumb>
+        <name>Magna feugiat lorem</name>
+    </item>
+    <item>
+        <detail> images/fulls/03.jpg</detail>
+        <thumb>images/thumbs/03.jpg</thumb>
+        <name>Magna feugiat lorem</name>
+    </item>
+    <item>
+        <detail> images/fulls/04.jpg</detail>
+        <thumb>images/thumbs/04.jpg</thumb>
+        <name>Magna feugiat lorem</name>
+    </item>
+    <item>
+        <detail> images/fulls/05.jpg</detail>
+        <thumb>images/thumbs/05.jpg</thumb>
+        <name>Magna feugiat lorem</name>
+    </item>
+    <item>
+        <detail> images/fulls/06.jpg</detail>
+        <thumb>images/thumbs/06.jpg</thumb>
+        <name>Magna feugiat lorem</name>
+    </item>
+    <item>
+        <detail> images/fulls/07.jpg</detail>
+        <thumb>images/thumbs/07.jpg</thumb>
+        <name>Magna feugiat lorem</name>
+    </item>
+    <item>
+        <detail> images/fulls/08.jpg</detail>
+        <thumb>images/thumbs/08.jpg</thumb>
+        <name>Magna feugiat lorem</name>
+    </item>
+    <item>
+        <detail> images/fulls/09.jpg</detail>
+        <thumb>images/thumbs/09.jpg</thumb>
+        <name>Magna feugiat lorem</name>
+    </item>
+    <item>
+        <detail> images/fulls/10.jpg</detail>
+        <thumb>images/thumbs/10.jpg</thumb>
+        <name>Magna feugiat lorem</name>
+    </item>
+    <item>
+        <detail> images/fulls/11.jpg</detail>
+        <thumb>images/thumbs/11.jpg</thumb>
+        <name>Magna feugiat lorem</name>
+    </item>
+    <item>
+        <detail> images/fulls/12.jpg</detail>
+        <thumb>images/thumbs/12.jpg</thumb>
+        <name>Magna feugiat lorem</name>
+    </item>
+</items>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article>
+        <h2>iframe</h2>
+        <div style="display: flex;">
+            <iframe 
+            width="360" height="768" 
+            src="./img/cat_-_51358 (720p).mp4" 
+            frameborder="0" 
+            scrolling="no"
+            name="web"></iframe>
+            <ul>
+                <li><a href="https://plana.aero/" target="web">https://plana.aero/</a></li>
+                <li><a href="https://klf.or.kr" target="web">https://klf.or.kr</a></li>
+            </ul>
+        </div>
+    </article>
+
+
+    <article>
+        <h2>video</h2>
+        <figure>
+            <video width="100%" height="960" 
+            autoplay muted controls loop poster="./img/05.jpg">
+                <source src="./img/cat_-_51358 (720p).mp4" type="video/mp4">
+            </video>
+        </figure>
+    </article>
+
+<style>
+    body,figure{margin: 0;}
+    video{
+        width: 100%; height: 100vh;
+        object-fit: cover;
+    }
+</style>
+
+</body>
+</html>

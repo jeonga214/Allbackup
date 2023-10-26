@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <article class="interval">
+
+        <h2>setInterval() / clearInterval()</h2>
+        <div>
+            <p>100%</p>
+        </div>
+
+        <style>
+            article{width: 500px; margin: 100px auto;}
+            .interval p{
+                background-color: red; 
+                text-align: right;
+                color: white;
+                width: 0;
+            }
+        </style>
+
+    </article>
+    
+    <script>
+        const elInterval = document.querySelector('.interval p');
+
+        let num = 0;
+
+        let interval =  setInterval(function(){
+                            if(num<20){
+                                num++;
+                                elInterval.style =`width:${num}%`;
+                                elInterval.innerText =`${num}%`;
+                            }else{
+                                clearInterval(interval);
+                            }
+                        }, 100);
+    </script>
+
+
+    <article class="slide">
+        <h2>ex) interval</h2>
+        <div>
+            <figure>
+                <img src="./img/01.jpg">
+                <img src="./img/02.jpg">
+                <img src="./img/03.jpg">
+            </figure>
+            <p>
+                <button data-name="prev"> prev </button>
+                <button data-name="next"> next </button>
+                <button data-name="toggle"> pause </button>
+            </p>
+        </div>
+
+        <style>
+            .slide div{overflow: hidden;}
+            figure{margin: 0; display: flex; transition: .5s;}
+            .slide img{width: 100%;}
+        </style>
+    </article>
+
+    <script>
+
+        const   elSlideBtn = document.querySelectorAll('.slide button'),
+                elSlide = document.querySelector('.slide figure');
+
+// 첫번째방법------------------------------------
+        let sNum = 0;
+                elSlideBtn.forEach(function(btn){
+                    btn.onclick = function(){
+                        let name = this.dataset.name;
+                        if(name==='toggle'){
+                            if(this.innerText ==='pause'){
+                                this.innerText = 'play'
+                                clearInterval(slideInterval)
+                            }else{
+                                this.innerText = 'pause'
+                                loop();
+                            }
+                        }else{
+                            slidePlay(name);
+                        }
+                    }
+                })
+        
+
+        let slidePlay =function(param){
+            if(param==='next'){
+                if(sNum <2){sNum ++;}
+            }else{
+                if(sNum >0){sNum --;}
+            }
+            elSlide.style = `transform:translateX(${-100 * sNum}%)`;
+        }
+
+// 자동실행
+        let slideInterval;
+//첫번째방법     // slideInterval = setInterval(slidePlay,2000,'next')
+//두번째방법     // slideInterval = setInterval(function(){
+                //     slidePlay('next');
+                // },2000)
+
+        function loop(){
+            slideInterval = setInterval(function(){
+                slidePlay('next');
+            },2000)
+        }
+        loop();
+
+        // elSlide.onclick =function(){
+        //     clearInterval(slideInterval);
+        // }
+
+// 두번째방법-------------------------
+        // let sNum = 0;
+        // elSlideBtn[1].onclick = function(){
+        //             slidePlay('next');
+        //             // if(sNum ==2){
+        //             //     const first = document.querySelector('.slide img:first-child');
+        //             //     elSlide.append(first.cloneNode());
+        //             // }
+        //         }
+
+        //         elSlideBtn[0].onclick =function(){
+        //             slidePlay('prev');
+        //         }
+        
+        // let slidePlay =function(param){
+        //     if(param==='next'){
+        //         if(sNum <2){sNum ++;}
+        //     }else{
+        //         if(sNum >0){sNum --;}
+        //     }
+        //     elSlide.style = `transform:translateX(${-100 * sNum}%)`;
+        // }
+
+    </script>
+
+    <script>
+        console.log(Math.radom());
+    </script>
+
+</body>
+</html>

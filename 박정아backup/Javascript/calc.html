@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 대입연산자(=), 산술연산자(+,-,*,/,%), 증감연산자(++,--), 
+    비교연산자(>,<,=>,=<,==,!=,===,!==),논리연산자(!,&&,||), 
+    할당연산자(+=,-=,*=,/=,%=) -->
+
+    <script>
+        let x =100, y = 200;
+
+        console.group('산술연산자');
+            console.log(`100+200=${x+y}`);
+            console.log(`100+200=${x-y}`);
+            console.log(`100+200=${x*y}`);
+            console.log(`100+200=${x/y}`);
+            console.log(`100+200=${x%y}`); 
+            // %는 나누고난 나머지값을 보여줌
+        console.groupEnd();
+
+
+        console.group('증감연산자'); // 증감연산자는 변수의 값이 변경됨
+            console.log(`++x = ${++x}`); // 1씩 증가(실행전 값올려줌)
+            console.log(`x++ = ${x++}`); // 1씩 증가(실행후 값올려줌)
+            console.log(`${x}`);
+        console.groupEnd();
+
+        //1씩 증가가 아닌 5씩증가같은 걸 할때는 할당연산자를 이용
+
+        console.group('비교연산자'); // 비교연산자는 false, true로 값나옴
+            console.log(`x>y = ${x>y}`);
+            console.log(`x<y = ${x<y}`);
+            console.log(`x>=y = ${x>=y}`); // =은 뒤에 위치
+            console.log(`x<=y = ${x<=y}`); 
+            console.log(`x==y = ${x==y}`); // = 한개만 쓰면 대입연산자
+            console.log(`x!=y = ${x!=y}`); // !=는 좌변이랑 우변이 다름
+
+            console.log(typeof (x != y) ); 
+
+            // 일치연산자
+            console.log(`x===y = ${x===y}`); //타입과 값이 모두 같은지에 대한 결과값이 나옴
+            console.log(`x!==y = ${x!==y}`);
+
+        console.groupEnd();
+
+
+        console.group('논리연산자'); 
+            console.log(`(x<y) && (x<=y) = ${(x<y) && (x<=y)}`); // &&는 좌측우측 모두 참일 때 결과값은 참
+            console.log(`(x<y) || (x>y) = ${(x<y) || (x>y)}`); // ||는 좌측우측 둘중 하나이상 참일 때 결과값은 참
+            console.log(`true = ${!true}`); // !는 부정(true가 아니다)
+        console.groupEnd();
+
+        console.group('할당연산자'); // 할당연산자는 변수의 값이 변경됨
+            console.log(`x+=y = ${x+=y}`); // 증감연산자에서 뱐경된 x값(102)+y값(200)=302
+            
+            let tag = `<figure>
+                            <img src="">
+                            <p>제목</p>
+                            <a>확인버튼</a>
+                        </figure>`
+
+                tag += `<article><h2>타이틀</h2></article>`
+
+            console.log(tag);
+
+
+        console.groupEnd();
+
+    </script>
+
+    <article>
+        <!-- 변수에 code -->
+        <h2>당신의 뇌구조</h2>
+        <ul>
+            <li><code></code> 점수: <code></code></li>
+            <li><code></code> 점수: <code></code></li>
+            <li><code></code> 점수: <code></code></li>
+        </ul>
+        <p>당신의 관심분야는 <code></code>입니다(<code></code>점)</p>
+    </article>
+
+    <script>
+
+        let b1 = '연애',
+            b2 = '미디어',
+            b3 = '코딩',
+            
+            a1 = 200,
+            a2 = 80,
+            a3 = 100;
+
+            a1>a2
+            a1>a3
+            a2>a3
+
+
+        let n = 0;
+        if(n<a1){n=a1;}
+        if(n<a2){n=a2;}
+        if(n<a3){n=a3;}
+
+        console.log(n)
+        console.log(Math.max(al,a2,a3))
+
+        // const elCode = document.querySelector('li:nth-of-type(1) code:nth-of-type(1)');
+
+        //querySelectorAll은 모두 잡아줌
+        const CodeName = document.querySelectorAll('li code:nth-of-type(1)'),
+              CodeNum = document.querySelectorAll('li code:nth-of-type(2)');
+
+        const result = document.querySelectorAll('p code');
+              
+              CodeName[0].innerText = b1;
+              CodeName[1].innerText = b2;
+              CodeName[2].innerText = b3;
+
+              CodeNum[0].innerText = a1;
+              CodeNum[1].innerText = a2;
+              CodeNum[2].innerText = a3;
+
+
+            //   if(조건){true}
+            //   else{false}
+
+            // 연습용
+            // if(`${a1>a2}`){
+            //     result[1].innerText = a1;
+            // }
+            // else{
+            //     result[1].innerText = a2;
+            // }
+
+
+            // if(`${a1>a3}`){
+            //     result[1].innerText = a1;
+            // }
+            // else{
+            //     result[1].innerText = a3;
+            // }
+
+
+            // if(`${a2>a3}`){
+            //     result[1].innerText = a2;
+            // }
+            // else{
+            //     result[1].innerText = a3;
+            // }
+
+
+
+              result[0].innerText = b3;
+              result[1].innerText = a3;
+
+    </script>
+
+</body>
+</html>

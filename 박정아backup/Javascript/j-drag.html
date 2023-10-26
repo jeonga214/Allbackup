@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Draggable - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  
+  <style>
+  #draggable { width: 150px; height: 150px; padding: 0.5em; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <script>
+  $( function() {
+    $( "#draggable" ).draggable();
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="draggable" class="ui-widget-content">
+  <p>Drag me around</p>
+</div>
+
+
+<div class="content">
+    <ul>
+        <li data-num="1">con01</li>
+        <li data-num="2">con02</li>
+        <li data-num="3">con03</li>
+        <li data-num="4">con04</li>
+        <li data-num="5">con05</li>
+    </ul>
+    <style>
+        .content{
+            width:50%; margin:100px auto;
+            border:1px solid black;
+            overflow: hidden;
+        }
+        .content ul{
+            display: flex;
+            margin:0; padding:0; list-style: none;
+        }
+        .content ul li{
+            width:100%;
+            height:300px;
+            flex-shrink: 0;
+
+            display: flex; justify-content: center;
+            align-items: center;
+            background-color: #eee;
+        }
+    </style>
+</div>
+
+<script>
+    let pos = {sX:0,eX:0, status:false}
+
+    $('.content ul').draggable({
+        axis:"x",
+        cursor:"move",
+        // containment:".content",
+        revert:function(){
+            pos.status = Math.abs(pos.sX - pos.eX) > $('.content').width()*0.3;
+            return pos.status ? false : true;
+        },
+        start:function(e){   
+            pos.sX = e.clientX;
+        },
+        drag:function(e){
+            pos.eX = e.clientX;            
+        },
+        stop:function(e){
+            let dataNum = e.toElement.dataset.num;
+
+            if(pos.status){
+                let moveNum = $('.content').width();
+                $('.content ul').css({
+                    transition:'0.5s',
+                    left:-moveNum * dataNum
+                })
+            }
+        }
+    });
+</script>
+
+
+
+
+ 
+ 
+</body>
+</html>

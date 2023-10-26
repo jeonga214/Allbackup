@@ -1,0 +1,619 @@
+@import url("./reset.css");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+
+
+
+header{
+    position: absolute;
+    left:0; top:0px;
+    padding:60px 0;
+    width:100%;
+    z-index: 2;
+}
+.head-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:80%;
+    margin:0 auto;
+}
+.head-area > nav{}
+.head-area > nav > a{
+    color:white;
+    font-size:28px;
+    font-family: 'Material Symbols Outlined';
+    cursor: pointer;
+}
+
+.head-area > h1{}
+.head-area > h1>a{}
+.head-area > h1>a>img{}
+
+.head-area .lang{}
+.head-area .lang>a{
+    color:#fff;
+    cursor: pointer;
+}
+.head-area .lang>a::after{
+    content:'arrow_drop_down';
+    font-size:14px;
+    font-family: 'Material Symbols Outlined';
+}
+
+
+main{}
+.spot{
+    height:100vh;
+    overflow: hidden;
+}
+.spot > div{
+    position: absolute;
+    left:0; top:0;
+    width:100%; height:100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.spot > div > strong {
+    font-size:80px;
+    color:#f5f4a5;
+}
+.spot > div > a{
+    color:white;
+    border:1px solid white;
+    padding:30px 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.72px;
+    margin-top:50px;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+.spot > div > a::before{
+    content: '';
+    position: absolute; left:50%; top:50%;
+    width:0%; height:0%;
+    background-color: red;
+    z-index: -1;
+    transition: 0.5s;
+}
+.spot > div > a:hover::before{
+    width:100%; height:100%;
+    left:0%; top:0%;
+}
+
+.spot > div > a::after{
+    content:'trending_flat';
+    font-weight: 400;
+    font-size:16px;
+    font-family: 'Material Symbols Outlined';
+    display: inline-block;
+ 
+}
+
+
+.spot > img{
+    width:100%; height:100%;
+    object-fit: cover;
+}
+
+
+.service{}
+.service > ul{width:1280px; margin:120px auto;}
+.service > ul > li{ 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:120px;
+}
+.service > ul > li > figure{width:50%;}
+.service > ul > li > figure > img{width:100%;}
+
+.service > ul > li > article{width:45%;}
+.service > ul > li > article > h3{
+    display: flex; align-items: center;
+    font-size:2rem;
+}
+.service > ul > li > article > h3::after{
+    content:'';
+    border-top:1px solid #000;
+    height:0;
+    flex-grow: 1;
+    margin:0 20px;
+}
+
+.service > ul > li > article > p{
+    margin:30px 0; color:#555; line-height: 1.6;
+}
+.service > ul > li > article > a{text-transform: uppercase;}
+.service > ul > li > article > a::after{
+    content:'>';
+    padding-left:10px;
+}
+.service > ul > li:nth-of-type(2n) > figure{order:2;}
+.service > ul > li:nth-of-type(2n) > article{order: 1;}
+
+.photo{
+    background-color: #ecf4f9;
+    text-align: center;
+    padding:120px 0;
+}
+.photo > h2{
+    font-size:3rem;
+}
+.photo > h2::after{
+    content: '';
+    width:100px; border:1px solid black;
+    display: block;  margin:50px auto;
+}
+.photo > p{
+    color:#555;
+    width:40%; margin:0 auto;
+    line-height: 1.6;
+}
+
+.photo > div{
+    width:1280px; margin:80px auto;
+    display: flex;
+    justify-content: space-around;
+}
+.photo > div > a{width:320px;}
+.photo > div figure{width:}
+.photo > div figure >p{
+    height:320px; overflow:hidden; border-radius: 50%;
+    transition: .5s;
+}
+.photo > div figure >p>img{width:100%;height:100%; object-fit: cover;}
+
+.photo > div figure >figcaption{
+    padding:30px 0;
+}
+
+
+.photo > div > a:hover figure > p{
+    border-radius: 0;
+}
+
+
+.grow{
+    text-align: center;
+    margin:150px 0;
+}
+.grow ul{
+    width:1280px; margin:50px auto;
+    display: flex;
+}
+.grow ul li{
+    background-color: aqua;
+    border: 1px solid #000;
+    height:200px;
+    flex-grow: 1;
+    transition: 1s;
+}
+.grow ul li:hover{
+    flex-grow: 10;
+}
+
+
+
+
+/* -------------------------480---------------------------------------- */
+@media (max-width:480px){
+
+    header{
+        position: absolute;
+        left:0; top:0px;
+        padding:20px 0;
+        width:100%;
+        z-index: 2;
+    }
+    .head-area{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width:80%;
+        margin:0 auto;
+    }
+    .head-area > nav{}
+    .head-area > nav > a{
+        color:white;
+        font-size:28px;
+        font-family: 'Material Symbols Outlined';
+        cursor: pointer;
+    }
+    
+    .head-area > h1{}
+    .head-area > h1>a{}
+    .head-area > h1>a>img{}
+    
+    .head-area .lang{}
+    .head-area .lang>a{
+        color:#fff;
+        cursor: pointer;
+    }
+    .head-area .lang>a::after{
+        content:'arrow_drop_down';
+        font-size:14px;
+        font-family: 'Material Symbols Outlined';
+    }
+    
+    
+    main{}
+    .spot{
+        height:100vh;
+        overflow: hidden;
+    }
+    .spot > div{
+        position: absolute;
+        left:0; top:0;
+        width:100%; height:100%;
+        border:1px solid #fff;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .spot > div > strong {
+        font-size:60px;
+        color:#f5f4a5;
+    }
+    .spot > div > a{
+        color:white;
+        border:1px solid white;
+        padding:30px 60px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.72px;
+        margin-top:50px;
+    
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+    }
+    .spot > div > a::before{
+        content: '';
+        position: absolute; left:50%; top:50%;
+        width:0%; height:0%;
+        background-color: red;
+        z-index: -1;
+        transition: 0.5s;
+    }
+    .spot > div > a:hover::before{
+        width:100%; height:100%;
+        left:0%; top:0%;
+    }
+    
+    .spot > div > a::after{
+        content:'trending_flat';
+        font-weight: 400;
+        font-size:16px;
+        font-family: 'Material Symbols Outlined';
+        display: inline-block;
+     
+    }
+    
+    
+    .spot > img{
+        width:100%; height:100%;
+        object-fit: cover;
+    }
+    
+    
+    .service{padding: 0 12px;}
+    .service > ul{width:100%; margin:100px auto;}
+    .service > ul > li{ 
+        display: block; 
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom:120px;
+    }
+    .service > ul > li > figure{width:100%;}
+    .service > ul > li > figure > img{width:100%;}
+    
+    .service > ul > li > article{width:100%; margin-top: 20px;}
+    .service > ul > li > article > h3{
+        display: flex; align-items: center;
+        font-size:2rem;
+    }
+    .service > ul > li > article > h3::after{
+        content:'';
+        border-top:1px solid #000;
+        height:0;
+        flex-grow: 1;
+        margin:0 0 0 20px;
+    }
+    
+    .service > ul > li > article > p{
+        margin:30px 0; color:#555; line-height: 1.6;
+    }
+    .service > ul > li > article > a{text-transform: uppercase;}
+    .service > ul > li > article > a::after{
+        content:'>';
+        padding-left:10px;
+    }
+    .service > ul > li:nth-of-type(2n) > figure{order:2;}
+    .service > ul > li:nth-of-type(2n) > article{order: 1;}
+    
+    .photo{
+        background-color: #ecf4f9;
+        text-align: center;
+        padding:120px 0;
+    }
+    .photo > h2{
+        font-size:3rem;
+    }
+    .photo > h2::after{
+        content: '';
+        width:100px; border:1px solid black;
+        display: block;  margin:50px auto;
+    }
+    .photo > p{
+        color:#555;
+        width:70%; margin:0 auto;
+        line-height: 1.6;
+    }
+    
+    .photo > div{
+        width:100%; margin:80px auto;
+        display: block;
+        justify-content: space-around;
+    }
+    .photo > div > a{width:320px;}
+    .photo > div figure{width:}
+    .photo > div figure >p{
+        height:320px; overflow:hidden; border-radius: 50%;
+        transition: .5s;
+    }
+    .photo > div figure >p>img{width:100%;height:100%; object-fit: cover;}
+    
+    .photo > div figure >figcaption{
+        padding:30px 0;
+    }
+    
+    
+    .photo > div > a:hover figure > p{
+        border-radius: 0;
+    }
+    
+    
+    .grow{
+        text-align: center;
+        margin:150px 0;
+    }
+    .grow ul{
+        width:100%; margin:50px auto;
+        display: flex;
+    }
+    .grow ul li{
+        background-color: aqua;
+        border: 1px solid #000;
+        height:200px;
+        flex-grow: 1;
+        transition: 1s;
+    }
+    .grow ul li:hover{
+        flex-grow: 10;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------481~767------------------------------------ */
+@media (min-width:481px) and (max-width:767px){
+    body{width: 1280px; position: relative;}
+    header{
+        position: absolute;
+        left:0; top:0;
+        padding:60px 0;
+        width:100%;
+        z-index: 2;
+    }
+    .head-area{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width:80%;
+        margin:0 auto;
+    }
+    .head-area > nav{}
+    .head-area > nav > a{
+        color:white;
+        font-size:28px;
+        font-family: 'Material Symbols Outlined';
+        cursor: pointer;
+    }
+    
+    .head-area > h1{}
+    .head-area > h1>a{}
+    .head-area > h1>a>img{}
+    
+    .head-area .lang{}
+    .head-area .lang>a{
+        color:#fff;
+        cursor: pointer;
+    }
+    .head-area .lang>a::after{
+        content:'arrow_drop_down';
+        font-size:14px;
+        font-family: 'Material Symbols Outlined';
+    }
+    
+    
+    main{}
+    .spot{
+        position: relative;
+        width: 1280px;
+        height:100vh;
+        overflow: hidden;
+    }
+    .spot > div{
+        position: absolute;
+        left:0; top:0;
+        width:100%; height:100%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .spot > div > strong {
+        font-size:80px;
+        color:#f5f4a5;
+    }
+    .spot > div > a{
+        color:white;
+        border:1px solid white;
+        padding:30px 60px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.72px;
+        margin-top:50px;
+    
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+    }
+    .spot > div > a::before{
+        content: '';
+        position: absolute; left:50%; top:50%;
+        width:0%; height:0%;
+        background-color: red;
+        z-index: -1;
+        transition: 0.5s;
+    }
+    .spot > div > a:hover::before{
+        width:100%; height:100%;
+        left:0%; top:0%;
+    }
+    
+    .spot > div > a::after{
+        content:'trending_flat';
+        font-weight: 400;
+        font-size:16px;
+        font-family: 'Material Symbols Outlined';
+        display: inline-block;
+     
+    }
+    
+    
+    .spot > img{
+        width:100%; height:100%;
+        object-fit: cover;
+    }
+    
+    
+    .service{}
+    .service > ul{}
+    .service > ul > li{
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom:120px;
+    }
+    .service > ul > li > figure{width:50%;}
+    .service > ul > li > figure > img{width:100%;}
+    
+    .service > ul > li > article{width:45%;}
+    .service > ul > li > article > h3{
+        display: flex; align-items: center;
+        font-size:2rem;
+    }
+    .service > ul > li > article > h3::after{
+        content:'';
+        border-top:1px solid #000;
+        height:0;
+        flex-grow: 1;
+        margin:0 20px;
+    }
+    
+    .service > ul > li > article > p{
+        margin:30px 0; color:#555; line-height: 1.6;
+    }
+    .service > ul > li > article > a{text-transform: uppercase;}
+    .service > ul > li > article > a::after{
+        content:'>';
+        padding-left:10px;
+    }
+    .service > ul > li:nth-of-type(2n) > figure{order:2;}
+    .service > ul > li:nth-of-type(2n) > article{order: 1;}
+    
+    .photo{
+        width: 1280px;
+        background-color: #ecf4f9;
+        text-align: center;
+        padding:120px 0;
+    }
+    .photo > h2{
+        font-size:3rem;
+    }
+    .photo > h2::after{
+        content: '';
+        width:100px; border:1px solid black;
+        display: block;  margin:50px auto;
+    }
+    .photo > p{
+        color:#555;
+        width:40%; margin:0 auto;
+        line-height: 1.6;
+    }
+    
+    .photo > div{
+        width:1280px; margin:80px auto;
+        display: flex;
+        justify-content: space-around;
+    }
+    .photo > div > a{width:320px;}
+    .photo > div figure{width:}
+    .photo > div figure >p{
+        height:320px; overflow:hidden; border-radius: 50%;
+        transition: .5s;
+    }
+    .photo > div figure >p>img{width:100%;height:100%; object-fit: cover;}
+    
+    .photo > div figure >figcaption{
+        padding:30px 0;
+    }
+    
+    
+    .photo > div > a:hover figure > p{
+        border-radius: 0;
+    }
+    
+    
+    .grow{
+        text-align: center;
+        margin:150px 0;
+    }
+    .grow ul{
+        width:1280px; margin:50px auto;
+        display: flex;
+    }
+    .grow ul li{
+        background-color: aqua;
+        border: 1px solid #000;
+        height:200px;
+        flex-grow: 1;
+        transition: 1s;
+    }
+    .grow ul li:hover{
+        flex-grow: 10;
+    }
+}

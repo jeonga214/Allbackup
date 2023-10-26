@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <ul>
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li><img src="./img/01.jpg"></li>
+    </ul>
+
+    <script>
+        // $('선택자').메소드();
+        $('body')
+        .css({
+            "background-color":"yellow",
+            fontSize : "50px"
+        })
+        .on('click',function(){
+            alert('와우')
+        });
+
+        $('li')
+        .css({
+            border:"3px solid red"
+        })
+        .on('click',function(){
+            $(this).css('color','red')
+            console.log(
+                $(this).index(),
+                $(this).text(),
+                $(this).html(),
+                $(this).attr('class','abc'),
+                $(this).find('img').attr('src')
+            );
+        });
+
+
+
+    </script>
+
+</body>
+</html>

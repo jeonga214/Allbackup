@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <!-- scroll_content.html -->
+
+    <header id="header">
+        <a> menu01 </a>
+        <a> menu02 </a>
+        <a> menu03 </a>
+        <a> menu04 </a>
+        <a> menu05 </a>
+    </header>
+
+    <main>
+        <div>
+            <section >01</section>
+            <section >02</section>
+            <section >03</section>
+            <section >04</section>
+            <section >05</section>
+        </div>
+    </main>
+    <style>
+        main{position:fixed; left:0; top:0; width:100%; height:100%;}
+        header{
+            position: fixed; left:0; top:0;
+            width:100%; padding:20px 0;
+            text-align: center;
+            background-color: rgba(0,0,0,0.6);
+            color:white;
+            transition: 1s; z-index: 999;
+        }
+        header a{cursor:pointer}
+        header a.active{
+            color:rgb(255, 0, 0);
+        }
+        header.active{
+            transform: translateY(-100%);
+        }
+        section{
+            font-size:5rem;
+            width:100%; height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section:nth-child(2n){
+            background-color: #eee;
+        }
+
+        main > div{transition:1s;}
+
+
+    </style>
+
+    <script>
+        try{
+            asdfasdf.onclick = function(){
+                event.target.className = 'asdfasdf'
+            }
+        }catch{}
+
+
+        let pos = {y:0,y2:0,status:true};
+        
+        let num = 0, timeOut;
+        const elMenus = document.querySelectorAll('header a'),
+              elSection = document.querySelectorAll('section'),
+              allContents = document.querySelector('main > div');
+
+        let secArr = [];
+            elSection.forEach(function(ele){
+                secArr.push(  ele.getBoundingClientRect()  );
+            })
+
+        document.body.style = `height:${allContents.offsetHeight}px`;
+        
+        window.addEventListener('scroll',function(){ 
+            pos.y = window.pageYOffset;
+            pos.status = (pos.y > pos.y2) ? true : false;
+            pos.y2 = pos.y;
+
+
+            allContents.style = `transform:translateY(-${pos.y}px)`;           
+
+            //섹션한칸씩 슬라이드
+            clearTimeout(timeOut);
+            timeOut = setTimeout(function(){
+                try{
+                    pos.status ? num++ : num--;
+                    allContents.style = `transform:translateY(-${secArr[num].y}px)`;           
+                }catch{ 
+                    pos.status ? num= secArr.length-1 : num=0;
+                }
+            },100);
+
+        })
+        
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

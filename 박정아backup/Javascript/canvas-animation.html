@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <canvas id="canvas" width="500" height="500">
+
+    </canvas>
+
+    <style>
+        canvas{
+            border: 1px solid gray;
+            width: 500px; height: 500px;
+        }
+    </style>
+    
+    <script>
+        let ctx = canvas.getContext('2d');
+
+        let cSize = {w:canvas.width, h:canvas.height}
+        
+
+        function ranNum(n){
+            return Math.ceil( Math.random()*n )
+        }
+
+        function CreateItem(n){
+            this.x = ranNum(cSize.w), 
+            this.y = ranNum(cSize.h), 
+            this.dx = ranNum(5),
+            this.w = n, 
+            this.h = n, 
+            this.c = `rgb(${ranNum(255)},${ranNum(255)},${ranNum(255)})`,
+            this.draw = function(){
+                ctx.beginPath();
+                ctx.globalAlpha = 0.6;
+                ctx.fillStyle = this.c;
+                ctx.arc(this.x, this.y, this.w, this.h, 0, Math.PI*2);
+                ctx.fill();
+            }
+            this.update = function(){
+                this.x += this.dx;
+
+                if(this.x > cSize.w || this.x < 0){
+                    this.dx *= -1;    
+                }
+
+            }
+        };
+        let item = [];
+        for(let i=0; i<50; i++){
+            item.push( new CreateItem(ranNum(100)) )
+        }
+
+
+
+        // for(let i=0; i<10; i++){
+        //     item[i].draw();
+        // }
+
+        function aniDraw(){
+            ctx.clearRect(0,0,cSize.w,cSize.h);
+            for(let i=0; i<50; i++){
+                item[i].update();
+                item[i].draw();
+            }
+            requestAnimationFrame(aniDraw)
+        }
+        aniDraw();
+        
+
+
+    </script>
+
+</body>
+</html>

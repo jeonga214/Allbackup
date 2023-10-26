@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- object.html -->
+    <script>
+        let obj = {
+            html:70, 
+            css:80, 
+            js:50,
+            total : function(){
+                return    this.html + this.css + this.js
+            }
+        };
+
+        // obj['html'] 
+        // obj.html
+        console.log(
+            obj,
+            obj.html + obj.css + obj.js
+        );
+
+        for(const key in obj){            
+            console.log(`<div>${key} = ${obj[key]}</div>`);
+        }
+        console.log(    obj.total()   );
+
+
+
+    </script>
+
+    <script>
+        let data = {
+                imageName_1 : {
+                    size:[200,300], 
+                    name:'이미지01',
+                    url:'http://naver.com'
+                }
+            }
+
+            console.log(   
+                data.imageName_1.size[0],
+                data.imageName_1.name,
+                data.imageName_1.url
+            );
+
+
+        let data2 = [
+            {name:'p01',code:12354},
+            {name:'p02',code:12354},
+            {name:'p03',code:12354},
+        ]
+
+        console.log( data2[1].name  );
+
+
+                    
+        let data3 = {
+            생활용품 : [
+                {
+                    code:520734,
+                    title:'알뜨리 다용도 압축봉 3', 
+                    price:14960, 
+                    color:'white',
+                    thumb : 'images/a1000045.jpg',
+                    size:'80-150mm'
+                },
+                {
+                    code:520734,
+                    title:'알뜨리 다용도 압축봉 5', 
+                    price:14960, 
+                    color:'white',
+                    thumb : 'images/a1000045.jpg',
+                    size:'80-150mm'
+                },
+                {
+                    code:520734,
+                    title:'알뜨리 다용도 압축봉 7', 
+                    price:14960, 
+                    color:'white',
+                    thumb : 'images/a1000045.jpg',
+                    size:'80-150mm'
+                },
+            ],
+
+            캠핑용품 : [
+                {
+                    code:520734,
+                    title:'그늘막텐트', 
+                    price:14960, 
+                    color:'white',
+                    thumb : 'images/a1000045.jpg',
+                    size:'80-150mm'
+                }
+            ]
+        }
+
+        // {
+        //     생활용품:[{},{},{}],
+        //     캠핑용품:[{}]
+        // } 
+                
+        console.log(  data3.생활용품   )
+
+        data3.생활용품.forEach(function(obj,key){
+            console.log(  obj.title  )
+        })
+
+        
+        // key => 생활용품, 캠핑용품
+        // 값 => data3[생활용품] 
+        for(const key in data3){
+            if( key == '생활용품' ){
+                data3[key].forEach(function(obj,k){
+                    console.log(  obj.title  )
+                })
+            }
+        }
+
+
+
+
+
+        
+    </script>
+
+
+    <article>
+        <h2>포트폴리오</h2>
+        <p>
+            <!-- <button>디자인</button>
+            <button>퍼블리셔</button>
+            <button>프론트엔드</button> -->
+        </p>
+
+        <div class="list">
+            <!-- <a href="#">
+                <figure>
+                    <p><img src="./img/01.jpg" width="200"></p>
+                    <figcaption>
+                        작품명 : 삼성디자인 시안
+                        제작기간 : 5일
+                        요약설명 : 사용성이 편리하고 심플한 컨셉
+                    </figcaption>
+                </figure>
+            </a> -->
+        </div>
+    </article>
+
+    <script>
+        const elList = document.querySelector('.list'),
+              elP = document.querySelector('article > p');
+
+        let art = {
+            디자인 : [
+                {
+                    작품명:'삼성디자인시안', 
+                    제작기간:'5일', 
+                    요약설명:'삼성디자인시안 설명....',
+                    이미지:'./img/01.jpg',
+                    링크:'http://naver.com'
+                },
+                {
+                    작품명:'카카오디자인시안', 
+                    제작기간:'5일', 
+                    요약설명:'카카오디자인시안 설명....',
+                    이미지:'./img/02.jpg',
+                    링크:'http://naver.com'
+                },
+            ],
+            퍼블리셔 : [
+                {
+                    작품명:'삼성코딩물', 
+                    제작기간:'5일', 
+                    요약설명:'삼성디자인시안 설명....',
+                    이미지:'./img/03.jpg',
+                    링크:'http://naver.com'
+                },
+            ],
+            프론트엔드 :[
+                {
+                    작품명:'모바일어플 1', 
+                    제작기간:'5일', 
+                    요약설명:'삼성디자인시안 설명....',
+                    이미지:'./img/04.jpg',
+                    링크:'http://naver.com'
+                },
+                {
+                    작품명:'모바일어플 2', 
+                    제작기간:'5일', 
+                    요약설명:'삼성디자인시안 설명....',
+                    이미지:'./img/05.jpg',
+                    링크:'http://naver.com'
+                }
+            ]
+        };
+
+        for(const k in art){
+            elP.innerHTML += `<button>${k}</button>`;
+        }
+
+        const elButton = document.querySelectorAll('button');
+
+        elButton.forEach(function(button,k){
+            button.onclick = function(){
+                let key = this.innerText
+
+                printFun(key);
+            }
+        });
+
+        let printFun = function(a){
+            elList.innerHTML='';
+            art[a].forEach(function(obj){
+                    elList.innerHTML += 
+                            `<a href="#">
+                                <figure>
+                                    <p><img src="${obj.이미지}" width="200"></p>
+                                    <figcaption>
+                                        작품명 : ${obj.작품명}
+                                        제작기간 : ${obj.제작기간}
+                                        요약설명 : ${obj.요약설명}
+                                    </figcaption>
+                                </figure>
+                            </a>`;
+            })
+        }
+
+        printFun('디자인');
+
+    </script>
+
+    <article>
+        <h2>object 출력</h2>
+        <div class="popol">
+            <div>  </div>
+            <div>  </div>
+            <div>  </div>
+        </div>
+    </article>
+
+    <script>
+        const elPopol =document.querySelectorAll('.popol > div');
+
+        // let num=0;
+        // for(const data in art){
+        //     art[data].forEach(function(obj,k){
+        //         elPopol[num].innerHTML += 
+        //                     `<a href="#">
+        //                         <figure>
+        //                             <p><img src="${obj.이미지}" width="200"></p>
+        //                             <figcaption>
+        //                                 작품명 : ${obj.작품명}
+        //                                 제작기간 : ${obj.제작기간}
+        //                                 요약설명 : ${obj.요약설명}
+        //                             </figcaption>
+        //                         </figure>
+        //                     </a>`;
+        //     })
+        //     num++;
+        // }
+
+
+
+
+            let dataPro = Object.keys(art);
+            console.log(dataPro);
+
+        elPopol.forEach(function(ele,k){
+            
+            let key = dataPro[k];
+
+            art[key].forEach(function(obj){
+                ele.innerHTML += 
+                            `<a href="#">
+                                <figure>
+                                    <p><img src="${obj.이미지}" width="200"></p>
+                                    <figcaption>
+                                        작품명 : ${obj.작품명}
+                                        제작기간 : ${obj.제작기간}
+                                        요약설명 : ${obj.요약설명}
+                                    </figcaption>
+                                </figure>
+                            </a>`;
+            })
+        });
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+next폴더생성
+ㄴnpx create-next-app next-tutorial
+ㄴ√ Would you like to use TypeScript? ... No / Yes
+√ Would you like to use ESLint? ... No / Yes
+√ Would you like to use Tailwind CSS? ... No / Yes
+√ Would you like to use `src/` directory? ... No / Yes
+√ Would you like to use App Router? (recommended) Yes
+√ Would you like to customize the default import alias? ... No / Yes
+ㄴcd next-tutorial
+ㄴnpm run dev(실행)
+
+사용법https://nextjs.org/
+
+
+next dev ⇒ 개발 모드에서 실행
+next build ⇒ 프로덕션 빌드 용도로 애플리케이션 빌드
+next start ⇒ Next.js 프로덕션 서버 시작
+
+ㄴnpm run dev(실행)
+ㄴnpm run build
+ㄴnpm run start
+
+<Link href='/'>로 링크이동
+폴더이름이 /뒤에들어가야됌

@@ -1,0 +1,18 @@
+server
+ㄴnpm init -y(환경구축)
+ㄴnpm i express, npm i cors, npm install -g nodemon(서버설치)
+ㄴindex.js(express 모듈활용, cors사용)
+ㄴnode index.js(서버구동-localhost:3030)
+ㄴnpx nodemon index.js(실시간 업데이트)
+
+ㄴjson파일생성
+ㄴindex.js (fs모듈활용 - readFileSync(), writeFileSync())
+
+write
+ㄴ npm i body-parser
+
+ex-front
+ㄴaxios(http;//localhost:3030)서버요청
+
+
+클라우드타입 배포

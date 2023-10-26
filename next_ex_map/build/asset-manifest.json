@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/person_pet/static/css/main.6271a355.css",
+    "main.js": "/person_pet/static/js/main.7cbc7bc5.js",
+    "static/js/787.00ecb077.chunk.js": "/person_pet/static/js/787.00ecb077.chunk.js",
+    "index.html": "/person_pet/index.html",
+    "main.6271a355.css.map": "/person_pet/static/css/main.6271a355.css.map",
+    "main.7cbc7bc5.js.map": "/person_pet/static/js/main.7cbc7bc5.js.map",
+    "787.00ecb077.chunk.js.map": "/person_pet/static/js/787.00ecb077.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6271a355.css",
+    "static/js/main.7cbc7bc5.js"
+  ]
+}

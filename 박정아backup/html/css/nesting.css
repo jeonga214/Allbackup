@@ -1,0 +1,31 @@
+header {
+  padding: 20px 0;
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  font-size: 2rem;
+}
+header nav a {
+  padding: 0 20px;
+  color: red;
+}
+
+main {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.spot figure {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.spot figure img {
+  width: 30%;
+}/*# sourceMappingURL=nesting.css.map */

@@ -1,0 +1,11 @@
+/* reset.css */
+body,p{margin:0}
+*{
+    /* 박스크기에 영향을 주지않음(안쪽여백,선) */
+    box-sizing: border-box;
+}
+ul,li{
+    margin: 0; padding: 0;
+    list-style-type: none;
+}
+img{vertical-align: top;}

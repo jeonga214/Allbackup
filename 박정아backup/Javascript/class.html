@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./class.css">
+</head>
+<body>
+    
+    <article class="s1">
+        <h2>class(add,remove,toggle,contains)</h2>
+        <div>
+            콘텐츠가 움직여요
+        </div>
+    </article>
+    <script>
+        const elS1 = document.querySelector('.s1');
+        elS1.onclick =function(){
+            elS1.classList.toggle('on');
+            // if(elS1.classList.contains('on')){
+            //     elS1.classList.remove('on');
+            // }else{
+            //     elS1.classList.add('on');
+            // }
+
+        }
+    </script>
+
+
+    <article class="s2">
+        <h2> 클릭버튼 활성화 </h2>
+        <div>
+            <button data-name="tab01">01</button>
+            <button data-name="tab02">02</button>
+            <button>03</button>
+        </div>
+        <div class="contants">
+            <div data-name="tab01"> 01 콘텐츠 </div>
+            <div data-name="tab02"> 02 콘텐츠 </div>
+            <div> 03 콘텐츠 </div>
+        </div>
+    </article>
+    <script>
+        const elS2 = document.querySelectorAll('.s2 button'),
+                elCon = document.querySelectorAll('.contants div');
+        let num = 0;
+
+        elS2.forEach(function(ele,key){
+            ele.onclick = function(){
+                
+                elS2[num].classList.remove('active');
+                this.classList.add('active');
+                
+                elCon[num].classList.remove('active');
+                elCon[key].classList.add('active');
+                
+                num = key;
+
+                
+                // let dataName = this.dataset.name
+                // elCon[].classList.add('active');
+            }
+        })
+    </script>
+
+    <article class="s3">
+        <h2>버거메뉴
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </h2>
+        <nav>
+            <a href="#"> 메뉴1 </a>
+            <a href="#"> 메뉴2 </a>
+            <a href="#"> 메뉴3 </a>
+            <a href="#"> 메뉴4 </a>
+            <a href="#"> 메뉴5 </a>
+        </nav>
+    </article>
+    <script>
+        const elS3H2 = document.querySelector('.s3 h2'),
+                elS3Nav = document.querySelector('.s3 nav');
+
+        elS3H2.onclick = function(){
+            if(elS3Nav.classList.contains('act')){
+                elS3Nav.classList.remove('act');
+                elS3H2.classList.remove('act');
+            }else{
+                elS3Nav.classList.add('act');
+                elS3H2.classList.add('act');
+            }
+        }
+
+
+    </script>
+
+    <article class="s4">
+        <h2>아코디언</h2>
+        <ul>
+            <li>
+                <p>Q js 셀렉터를 잡는 방법은?</p>
+                <div>
+                    document.querySelector,
+                    getElementId, getElementsByClassName....
+                </div>
+            </li>
+            <li>
+                <p>Q js 셀렉터를 잡는 방법은?</p>
+                <div>
+                    document.querySelector,
+                    getElementId, getElementsByClassName....
+                </div>
+            </li>
+            <li>
+                <p>Q js 셀렉터를 잡는 방법은?</p>
+                <div>
+                    document.querySelector,
+                    getElementId, getElementsByClassName
+                    document.querySelector,
+                    getElementId, getElementsByClassName
+                </div>
+            </li>
+        </ul>
+    </article>
+    <script>
+        const elS4 = document.querySelectorAll('.s4 li');
+
+        let S4Num =0;
+        elS4.forEach(function(ele,key){
+            ele.onclick = function(){
+
+                let elDiv = this.children[1];
+
+                if(this.classList.contains('active')){
+                    this.classList.remove('active');
+                }else{
+                    elS4[S4Num].classList.remove('active');
+                    this.classList.add('active');
+                }
+                S4Num = key;
+            }
+        })
+    </script>
+
+</body>
+</html>

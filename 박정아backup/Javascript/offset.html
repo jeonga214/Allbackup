@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 위치 => offsetTop, offsetLeft
+    크기 => offsetHeight, offsetWidth -->
+
+    <article>
+        <h2> offset </h2>
+        <div>
+            <img src="./img/01.jpg">
+            <img src="./img/02.jpg">
+            <img src="./img/05.jpg">
+        </div>
+        <p></p>
+        <style>
+            article{
+                width: 80%; 
+                margin: 10px auto; padding: 10px; 
+                border: 5px solid #000;
+                overflow: auto;
+            }
+            article div{position: relative;}
+            body{margin: 0;}
+            img{width: 400px;}
+            p{
+                position: absolute; left: 0; top: 0;
+                border: 20px solid red;
+                box-sizing: border-box;
+                transition: 1s;
+                margin: 0;
+            }
+        </style>
+    </article>
+    <script>
+        const elImg = document.querySelectorAll('img'),
+                elP = document.querySelector('p');
+
+        elImg.forEach(function(ele,key){
+            ele.onclick = function(){
+                let offset = {
+                    y:ele.getBoundingClientRect().top,
+                    x:ele.getBoundingClientRect().left,
+                    w:ele.getBoundingClientRect().width,
+                    h:ele.getBoundingClientRect().height
+                }
+                elP.style = `
+                left:${offset.x}px;
+                top:${offset.y}px;
+                width:${offset.w}px;
+                height:${offset.h}px`;
+
+            }
+        })
+
+
+        const elAriticle= document.querySelector('article');
+
+        console.log(
+            elAriticle.getBoundingClientRect()
+        );
+
+        console.log(
+            elAriticle.offsetWidth,
+            elAriticle.clientWidth,
+            elAriticle.scrollWidth
+        );
+
+    </script>
+
+</body>
+</html>

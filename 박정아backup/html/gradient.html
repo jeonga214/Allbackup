@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <article class="gradient">
+        <h2>gradient(linear/radial)</h2>
+        <div> linear-gradient </div>
+        <div> radial-gradient </div>
+        <div> conic-gradient </div>
+        <style>
+            article{width: 50%; margin: 100px auto;}
+            .gradient div{height: 300px;}
+            .gradient div:nth-of-type(1){
+                /* background: linear-gradient(90deg,red 50%,yellow); */
+                background: repeating-linear-gradient(red, red 10px, yellow 10px, yellow 20px);
+            }
+            .gradient div:nth-of-type(2){
+                /* closest-side, closest-corner, farthest-side, farthest-corner */
+                /* background: radial-gradient(circle closest-corner at 50px 50px,red 30%,yellow,green); */
+                background: radial-gradient(circle farthest-corner at 0px 0px,red 30%,yellow,green);
+            }
+            .gradient div:nth-of-type(3){
+                width: 300px;
+                background: conic-gradient(red 10%,yellow 0%);
+            }
+        </style>
+    </article>
+
+    <article class="str-dot">
+        <h2>긴문자 뒤에 점찍기</h2>
+        <div>무료 Canva 혼자이든 함께이든, 어떤 디자인이 되었건, 디자인하고 싶은 사람은 누구나 이용할 수 있습니다.</div>
+        <div>무료 Canva 혼자이든 함께이든, 어떤 디자인이 되었건, 디자인하고 싶은 사람은 누구나 이용할 수 있습니다.무료 Canva 혼자이든 함께이든, 어떤 디자인이 되었건, 디자인하고 싶은 사람은 누구나 이용할 수 있습니다.</div>
+
+        <style>
+            .str-dot div{margin: 100px 0;}
+            .str-dot div:nth-of-type(1){
+                /* 한줄 */
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .str-dot div:nth-of-type(2){
+                /* 여러줄 */
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        </style>
+    </article>
+
+    <article class="filter">
+        <h2> filter(blur, brightness, grayscale, drop-shadow) </h2>
+        <div> blur </div>
+        <div><img src="./img/sp_main.30918f90.png"></div>
+        <style>
+            .filter div{margin: 50px 0;}
+            .filter div:nth-of-type(1){
+                font-size: 3rem; 
+                font-weight: bold;
+                -webkit-text-stroke: 1px purple;
+                -webkit-text-fill-color: transparent;
+            }
+            .filter div:nth-of-type(2){
+                filter: drop-shadow(4px 4px 0px #003780) 
+                grayscale(100%) 
+                blur(2px);
+                transition: .5s;
+            }
+            .filter div:nth-of-type(2):hover{
+                filter: drop-shadow(4px 4px 0px #004280) 
+                grayscale(0%) 
+                blur(0px)
+                brightness(100%);
+            }
+        </style>
+    </article>
+
+    <article class="mix">
+        <h2>mix-blend-mode</h2>
+        <div>부모배경색과 자식배경색을 혼합</div>
+        <style>
+            .mix{
+                background-color: black;
+                width: 100%; height: 100vh;
+                text-align: center;
+            }
+            .mix div{
+                color: white;
+                font-size: 2rem;
+                font-weight: bold;
+                mix-blend-mode: difference;
+                position: relative;
+                z-index: 2;
+            }
+            .mix::after{
+                content: '';
+                width: 100%; height: 100%;
+                position: fixed; left: 0; top: 100%;
+                z-index: 1;
+                background-color: white;
+
+                animation: bg 1s 1s forwards;
+                mix-blend-mode: difference;
+            }
+            @keyframes bg{
+                0%{top: 100%;}
+                100%{top: 0%;}
+            }
+        </style>
+    </article>
+    
+</body>
+</html>

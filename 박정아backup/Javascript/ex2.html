@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- ex2.html -->
+    <article class="ex1">
+        <h2> list </h2>
+        <ul>
+            <li><img src="./img/01.jpg"></li>
+            <li><img src="./img/02.jpg"></li>
+            <li><img src="./img/03.jpg"></li>
+        </ul>
+        <div class="popup">
+            <img src="./img/01.jpg">
+        </div>
+        <style>
+            .ex1 ul {
+                display: flex;
+            }
+
+            .ex1 ul img {
+                width: 400px;
+            }
+
+            .popup {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.6);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: none;
+            }
+        </style>
+    </article>
+
+    <script>
+        const exPhoto = document.querySelectorAll('.ex1 li'),
+            exImgs = document.querySelectorAll('.ex1 li img'),
+
+            exPopup = document.querySelector('.popup'),
+            exPopupImg = document.querySelector('.popup img');
+
+        exPhoto.forEach(function (ele, k) {
+            ele.onclick = function () {
+
+                exPopupImg.src = exImgs[k].src;
+
+                exPopup.style = 'display:flex';
+            }
+        });
+
+        exPopup.onclick = function () {
+            // event.target.tagName  !=  'IMG'
+            if (event.target.className == 'popup') {
+                exPopup.style = 'display:none';
+            }
+        }
+
+    </script>
+
+
+
+    <article class="ex2">
+        <h2>이미지 크게보기</h2>
+        <figure><img src="./img/01.jpg"></figure>
+        <div>
+            <figure><img src="./img/01.jpg"></figure>
+            <figure><img src="./img/02.jpg"></figure>
+            <figure><img src="./img/03.jpg"></figure>
+        </div>
+        <style>
+            figure {
+                margin: 0;
+            }
+
+            .ex2 {
+                width: 600px;
+                margin: 100px auto;
+            }
+
+            .ex2>figure img {
+                width: 100%;
+            }
+
+            .ex2>div {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .ex2>div figure {
+                width: 33%;
+            }
+
+            .ex2>div img {
+                width: 100%;
+                height: 150px;
+            }
+        </style>
+    </article>
+
+
+    <script></script>
+
+    <article class="ex3">
+        <h2> form을 이용한 연산</h2>
+        <p></p>
+        <div class="number">
+            <button>0</button> <button>1</button>
+            <button>2</button> <button>3</button>
+            <button>4</button> <button>5</button>
+            <button>6</button> <button>7</button>
+            <button>8</button> <button>9</button>
+        </div>
+        <div class="calc">
+            <button>+</button> <button>-</button>
+            <button>*</button> <button>/</button>
+            <button>%</button>
+        </div>
+        <div class="result">
+            <button>결과보기</button>
+        </div>
+        <style>
+            .ex3 {
+                width: 600px;
+                margin: 100px auto;
+            }
+
+            .ex3 button {
+                padding: 20px;
+            }
+
+            .ex3 p {
+                background-color: black;
+                padding: 20px;
+                color: white;
+                font-size: 3rem;
+            }
+        </style>
+    </article>
+
+    <script>
+        const ex3Result = document.querySelector('.ex3 p'),
+            ex3Button = document.querySelectorAll('.ex3 button');
+
+        ex3Button.forEach(function (btn, key) {
+            btn.onclick = function () {
+                // ※ this는 발생된 이벤트의 타겟을 가리킴
+                let data = this.innerText;
+                if (data != '결과보기') {
+                    ex3Result.innerText += data;
+                } else {
+                    ex3Result.innerText = eval(ex3Result.innerText);
+                }
+
+            }
+        })
+    </script>
+
+
+    <article class="ex4">
+        <h2>로그인</h2>
+        <form action="https://naver.com">
+            <div>
+                <input type="text">
+                <input type="password">
+                <input type="submit">
+            </div>
+        </form>
+        <style>
+            .ex4 {
+                width: 600px;
+                margin: 100px auto;
+            }
+        </style>
+    </article>
+
+    <script>
+        const ex4Input = document.querySelectorAll('.ex4 input');
+        let member = { id: 'green', pw: '1234' };
+
+        ex4Input[2].onclick = function () {
+            event.preventDefault();
+
+            if (ex4Input[0].value === member.id) {
+                if (ex4Input[1].value === member.pw) {
+                    alert('고객님 환영합니다.');
+                    location.href = 'http://naver.com';
+                } else {
+                    alert('패스워드가 틀립니다.');
+                }
+            } else {
+                alert('아이디가 틀려요~~');
+            }
+        }
+
+        // member.id
+        // member['id']
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

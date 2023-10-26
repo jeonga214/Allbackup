@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- scroll_intoview.html -->
+
+    <header id="header">
+        <a> menu01 </a>
+        <a> menu02 </a>
+        <a> menu03 </a>
+        <a> menu04 </a>
+        <a> menu05 </a>
+    </header>
+
+    <main>
+        <section data-num="0">01</section>
+        <section data-num="1">02</section>
+        <section data-num="2">03</section>
+        <section data-num="3">04</section>
+        <section data-num="4">05</section>
+    </main>
+    <style>
+        header{
+            position: fixed; left:0; top:0;
+            width:100%; padding:20px 0;
+            text-align: center;
+            background-color: rgba(0,0,0,0.6);
+            color:white;
+            transition: 1s;
+        }
+        header a{cursor:pointer}
+        header a.active{
+            color:rgb(255, 0, 0);
+        }
+        header.active{
+            transform: translateY(-100%);
+        }
+        section{
+            font-size:5rem;
+            width:100%; height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section:nth-child(2n){
+            background-color: #eee;
+        }
+    </style>
+
+    <script>
+        const elMenus = document.querySelectorAll('header a'),
+              elSection = document.querySelectorAll('section');
+        
+        let num = 0;
+        elMenus.forEach(function(menu,key){
+            menu.onclick = function(){
+                elMenus[num].classList.remove('active');
+                this.classList.add('active')
+                num = key;
+
+                elSection[key].scrollIntoView(
+                    {behavior:"smooth",block:"center"}
+                );
+            }
+        })
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

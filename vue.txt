@@ -1,0 +1,7 @@
+window powersell
+ㄴset-executionpolicy remotesigned
+ㄴ모두예
+
+터미널창 npm i -g @vue/cli
+ㄴvue create 프로젝트명
+ㄴnpm run serve(실행)

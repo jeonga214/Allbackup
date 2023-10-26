@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // function 네이밍(){}
+        // let 네이밍 = function(){}
+
+        let fun1 = function(){
+            console.log('함수실행');
+        }
+        fun1();
+
+        let fun2 = function(값){
+            console.log(값);
+        }
+        fun2('함수실행');
+        // fun1,fun2는 같은 경우(형식만 다름)
+
+        let fun3 = function(...값){
+            console.log(값);
+        }
+        fun3(10,20,30,40,50);
+        //여러값을 쓸때는 매개변수 앞에"..."을 쓴다(10을 없얘고 싶으면 "값1,"을 맨앞에 붙인다.)
+
+        let fun = function(값1,...값){
+            console.log(arguments);
+        }
+        fun(10,20,30,40,50);
+
+    </script>
+
+
+
+    <article>
+        <h2>구구단</h2>
+        <div class="btn">
+            <button>전체</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+        </div>
+        <div class="result">
+
+        </div>
+    </article>
+
+    <script>
+        
+        // let i=1;
+        // while(i<10){
+        //     console.log(`${2}x${i}=${2*i}`)
+        //     i++;
+        // }
+        
+        // for(let i=1; i<=9; i++){
+        //         console.log(`${2}x${i}=${2*i}`);
+        //     }
+
+
+        // let gugudan =function(값){
+        //     for(let i=1; i<=9; i++){
+        //         console.log(`${값}x${i}=${값*i}`);
+        //     }
+        // }
+        // for(let k=2; k<=9; k++){
+        //     gugudan(k);
+        // }
+        
+        let gugudan =function(값){
+
+            Result.innerHTML += `<p><b>${값}단</b><br>`;
+
+            for(let i=2; i<=9; i++){
+                Result.innerHTML += `${값}x${i}=${값*i}<br>`;
+            }
+            Result.innerHTML += `</p>`
+        }
+        let all = function(){
+            for(let k=2; k<=9; k++){
+                gugudan(k);
+            }
+        }
+        
+        const   Result = document.querySelector('.result'),
+                elButton = document.querySelectorAll('.btn button');
+
+
+        elButton.forEach(function(btn,key){
+            btn.onclick = function(){
+                let s = this.innerText;
+
+                Result.innerHTML ='';
+                if(key === 0){
+                    all();
+                }else{
+                    gugudan(s);
+                }
+            }
+        })
+
+    
+
+
+
+    </script>
+
+
+
+    <article class="count">
+        <h2>setInterval / count</h2>
+        <div> 1000 </div>
+        <div> 600 </div>
+    </article>
+
+    <script>
+
+//         const elCount =document.querySelector('.count div');
+//         let count = Number(elCount.innerText);
+
+//         elCount.innerHTML = 0;
+
+
+
+//         let sNum = 0;
+//         setInterval(function(){
+//             if(sNum < count)sNum++;
+//             elCount.innerHTML =sNum;
+//             console.log(`슬라이드 ${sNum}`)
+//         }, 10)
+
+        const elCount = document.querySelectorAll('.count div');
+
+        let count =[];
+        elCount.forEach(function(el){
+            count.push(Number(el.innerText));
+            el.innerHTML= 0;
+        })
+
+        console.log(count);
+
+
+
+        let startCount = function(n){
+            let sNum = 0;
+            setInterval(function(){
+                if(sNum < count[n])sNum++;
+                elCount[n].innerHTML =sNum;
+            }, 100)
+        }
+
+        elCount.forEach(function(v,k){
+            startCount(k);
+        })
+
+        // setInterval(callback,time);
+
+
+    </script>
+
+</body>
+</html>

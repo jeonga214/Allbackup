@@ -1,0 +1,68 @@
+{
+    "items":[
+        {
+            "detail": "images/fulls/01.jpg",
+            "thumb": "images/thumbs/01.jpg",
+            "name": "Magna feugiat lorem"
+        },
+        {
+            "detail": "images/fulls/02.jpg",
+            "thumb": "images/thumbs/02.jpg",
+            "name": "Nisl adipiscing"
+        },
+        {
+            "detail": "images/fulls/03.jpg",
+            "thumb": "images/thumbs/03.jpg",
+            "name": "aliquam veroeros"
+        },
+        {
+            "detail": "images/fulls/04.jpg",
+            "thumb": "images/thumbs/04.jpg",
+            "name": "Aliquam ipsum sed dolore"
+        },
+        {
+            "detail": "images/fulls/05.jpg",
+            "thumb": "images/thumbs/05.jpg",
+            "name": "Cursis aliquam nisl"
+        },
+        {
+            "detail": "images/fulls/06.jpg",
+            "thumb": "images/thumbs/06.jpg",
+            "name": "Sed consequat phasellus"
+
+        },
+        {
+            "detail": "images/fulls/07.jpg",
+            "thumb": "images/thumbs/07.jpg",
+            "name": "Mauris id tellus arcu"
+        },
+        {
+            "detail": "images/fulls/08.jpg",
+            "thumb": "images/thumbs/08.jpg",
+            "name": "Nunc vehicula id nulla"
+
+        },
+        {
+            "detail": "images/fulls/09.jpg",
+            "thumb": "images/thumbs/09.jpg",
+            "name": "Neque et faucibus viverra"
+        },
+        {
+            "detail": "images/fulls/10.jpg",
+            "thumb": "images/thumbs/10.jpg",
+            "name": "Mattis ante fermentum"
+
+        },
+        {
+            "detail": "images/fulls/11.jpg",
+            "thumb": "images/thumbs/11.jpg",
+            "name": "Sed ac elementum arcu"
+
+        },
+        {
+            "detail": "images/fulls/12.jpg",
+            "thumb": "images/thumbs/12.jpg",
+            "name": "Vehicula id nulla dignissim"
+        }
+    ]
+}

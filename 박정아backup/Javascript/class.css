@@ -1,0 +1,74 @@
+.s1{color: black;}
+.s1 div{
+    transition: 1s;
+    transform: translateX(0%);
+}
+.s1.on{color: red;}
+.s1.on h2{font-size: 3rem;}
+.s1.on div{
+    transform: translateX(50%);
+}
+
+article{width: 500px; margin: 200px auto;}
+.s2 button.active{background-color: rgba(37, 114, 214, 0.692);}
+.s2 .contants div{
+    border:  1px solid black; padding: 100px;
+    display: none;
+}
+.s2 .contants div.active{display: block;}
+.s3 h2{
+    padding: 20px 0;
+    position: relative;
+}
+.s3 nav{
+    width: 20%; height: 100%;
+    background-color: aliceblue;
+    position: fixed;
+    left: 0; top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-100%);
+    transition: .5s;
+}
+.s3 nav.act{
+    transform: translateX(0%);
+}
+.s3 h2 div span{
+    position: absolute;
+    left: 0; top: 70px;
+    display: block;
+    width: 30px; height: 2px;
+    background-color: black;
+    transition: .3s;
+}
+.s3 h2 div span:nth-of-type(2){
+    transform: translateY(10px);
+}
+.s3 h2 div span:nth-of-type(3){
+    transform: translateY(20px);
+}
+
+.s3 h2.act div span:nth-of-type(1){
+    transform: rotate(45deg);
+}
+.s3 h2.act div span:nth-of-type(2){
+    transform: rotate(45deg);
+}
+.s3 h2.act div span:nth-of-type(3){
+    transform: rotate(-45deg);
+}
+
+
+.s4 ul{padding: 0; list-style: none;}
+.s4 li{border-top: 1px solid #ddd; padding: 20px 0;}
+.s4 div{background-color: #eee; padding: 20px 20px; display: none;}
+.s4 li p{position: relative;}
+.s4 li p::after{
+    content: '▼';
+    position: absolute;
+    right: 0; top: 0;
+    transition: ease-in-out 0.6s all;
+}
+.s4 li.active p::after{transform: rotate(180deg);}

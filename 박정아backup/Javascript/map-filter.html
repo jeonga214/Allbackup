@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- map-filter.html -->
+
+    <script>
+        let data = [
+            {id:0,name:'수박'},
+            {id:1,name:'사과'},
+            {id:2,name:'얼음'},
+        ];
+
+        let [a,...all] = data;
+        all[0].name = '복숭아';
+
+
+
+        let test = [10,20,30];       
+            testCopy = [...test];    
+
+            testCopy[0] = 10000;
+
+            console.log(test)
+            console.log(testCopy)
+
+
+
+        let addData = data.map((obj,key)=>{
+                obj.num = key;
+                return obj;
+        })
+
+       
+
+
+
+        let find = data.filter(obj => obj.name ==='사과');
+
+
+        // let find = data.filter(function(obj){
+        //                 if(obj.name ==='사과'){
+        //                     return obj;
+        //                 };
+        //            });
+
+     
+
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=f89a6c1f22aca3858a4ae7aef10de967')
+        .then(res => res.json())
+        .then(data => {
+            
+            console.log(
+                data.results.filter(obj => obj.title == 'Barbie')
+            )
+        })
+
+    </script>
+
+
+
+
+
+</body>
+</html>

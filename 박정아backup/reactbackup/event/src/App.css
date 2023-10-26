@@ -1,0 +1,38 @@
+
+nav{
+  background-color: black;
+  padding: 15px 0;
+  text-align: center;
+}
+nav a{
+  color: white; padding: 0 20px;
+  text-decoration: none;
+}
+main{width: 50%; margin: 0 auto;}
+article{margin: 100px 0;}
+
+
+.popup{
+  padding: 100px;
+  background-color: aliceblue;
+  display: none;
+}
+.popup.active{
+  display: block;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+}
+
+.scroll figure{
+  background-color: rgb(189, 189, 189);
+  height: 500px;
+  margin: 100px 0;
+  transform: translateX(-100%);
+  transition: 1s;
+}
+.scroll figure.active{
+  transform: translateX(0%);
+}

@@ -1,0 +1,293 @@
+@charset "UTF-8";
+html, body {
+  margin: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+}
+
+common.scss 다중 페이지 공통스타일 header {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  width: 100%;
+  margin: 20px auto;
+}
+common.scss 다중 페이지 공통스타일 header nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+common.scss 다중 페이지 공통스타일 header nav a {
+  font-weight: 400;
+  font-size: 20px;
+}
+common.scss 다중 페이지 공통스타일 header nav a:hover {
+  font-weight: 700;
+  font-size: 20px;
+}
+common.scss 다중 페이지 공통스타일 header figure {
+  margin: 0;
+  padding: 0;
+}
+p {
+  white-space: pre-line;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  width: 100%;
+  margin: 20px auto;
+}
+header nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+header nav a {
+  font-weight: 400;
+  font-size: 20px;
+}
+header nav a:hover {
+  font-weight: 700;
+  font-size: 20px;
+}
+header figure {
+  margin: 0;
+  padding: 0;
+}
+main article.srot1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main article.srot1 h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 70px;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+}
+main article.srot1 figure {
+  margin: 0;
+  padding: 0;
+}
+main article.srot1 figure img {
+  width: 100%;
+  object-fit: cover;
+}
+main article.srot2 {
+  margin: 155px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+main article.srot2 h1 {
+  font-size: 30px;
+}
+main article.srot2 h1::after {
+  content: "";
+  margin: 30px auto 0;
+  display: block;
+  height: 1px;
+  width: 40%;
+  border-bottom: 2px solid #000;
+}
+main article.srot2 p {
+  font-weight: 300;
+  font-size: 15px;
+}
+main article.srot2 ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 100px;
+}
+main article.srot2 ul li {
+  margin: 0 45px;
+}
+main article.srot2 ul li figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+main article.srot2 ul li figure p {
+  height: 320px;
+  overflow: hidden;
+}
+main article.srot2 ul li figure p img {
+  transition: 0.5s;
+}
+main article.srot2 ul li figure p img:hover {
+  transform: scale(1.1);
+}
+main article.srot2 ul li figure figcaption {
+  margin: 40px auto;
+  font-weight: 300;
+  font-size: 15px;
+}
+main section.srot3 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 200px;
+  position: relative;
+}
+main section.srot3 > figure:nth-of-type(1) {
+  margin: 0;
+  padding: 0;
+}
+main section.srot3 > figure:nth-of-type(1) img {
+  width: 100%;
+  object-fit: cover;
+}
+main section.srot3 > div {
+  max-width: 1400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 100%;
+}
+main section.srot3 > div div {
+  width: 700px;
+  position: absolute;
+  bottom: 20%;
+  right: 5%;
+}
+main section.srot3 > div div > h1 {
+  font-weight: 700;
+  font-size: 30px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+main section.srot3 > div div > h1 span {
+  color: red;
+}
+main section.srot3 > div div > p {
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+main section.srot3 > div div ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 45px;
+}
+main section.srot3 > div div ul li figure {
+  margin: 0;
+  padding: 0;
+}
+main section.srot3 > div div ul li figure > p {
+  width: 170px;
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border: 3px solid #7a7a7a;
+  border-radius: 50%;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+}
+main section.srot3 > div div ul li figure figcaption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+main section.srot3 > div div ul li figure figcaption b {
+  font-weight: 700;
+  font-size: 20px;
+}
+main section.srot3 > div div ul li figure figcaption p {
+  font-weight: 300;
+  font-size: 14px;
+  text-align: center;
+  color: #6e6e6e;
+}
+
+@media (max-width: 767px) {
+  body {
+    background-color: rgb(237, 164, 255);
+  }
+}
+@media (max-width: 480px) {
+  header {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    width: 100%;
+    margin: 20px auto;
+  }
+  header nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    display: none;
+  }
+  header nav a {
+    font-weight: 400;
+    font-size: 20px;
+  }
+  header nav a:hover {
+    font-weight: 700;
+    font-size: 20px;
+  }
+  header figure {
+    margin: 0;
+    padding: 0;
+  }
+}/*# sourceMappingURL=self.css.map */

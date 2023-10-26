@@ -1,0 +1,7 @@
+레파지토리생성
+ㄴgit init
+ㄴgit add .
+ㄴgit commit -m '아무말'
+ㄴgit branch -M main
+ㄴgit remote add origin 깃주소
+ㄴgit push origin main

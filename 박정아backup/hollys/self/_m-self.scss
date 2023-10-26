@@ -1,0 +1,31 @@
+
+@include device(nth($mobile,2)){
+    body{background-color: rgb(237, 164, 255);}
+}
+@include device(nth($mobile,1)){
+    header{
+        @include reset;
+        @include flex(space-between);
+        max-width:$m-wid;
+        width:100%;
+        margin:20px auto;
+        nav{
+            @include reset {list-style:none;};
+            @include flex(space-evenly);
+            width:100%;
+            display: none;
+            a{
+                @include font(400,20px);
+                
+                &:hover{
+                    @include font(700,20px);
+                }
+            }
+        }
+        figure{
+            @include reset;
+            img{
+            }
+        }
+    }
+}

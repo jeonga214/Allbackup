@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+        name, 
+        delay(지연시간), 
+        direction(방향), 
+        duration(속도), 
+        iteration-count(반복횟수), 
+        play-state(시작,멈춤), 
+        timing-function(시간가격효과-ease,ease-in), 
+        fill-mode(상태-애니메이션이 끝나고 난후, 시작전)
+    -->
+
+    <article>
+        <h2> Text animation - duration, iteration-count</h2>
+        <div class="ani-1">
+            <p>Text animation Text animation Text animation</p>
+        </div>
+
+        <style>
+            .ani-1{overflow: hidden;}
+            .ani-1 > p{
+                font-size: 200px;
+                white-space: nowrap;
+
+                /* animation: ani-1 2s infinite; */
+
+                animation-name: ani-1;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+
+            @keyframes ani-1{
+                0%{transform: translateX(0%);}
+                100%{transform: translateX(-73%);}
+            }
+        </style>
+
+    </article>
+
+
+    <article>
+        <h2> Text animation - duration, delay, forwards</h2>
+        <div class="ani-2">
+            <p>
+                <span>T</span>
+                <span>E</span>
+                <span>X</span>
+                <span>T</span>
+            </p>
+        </div>
+
+        <style>
+            .ani-2{}
+            .ani-2 p{overflow: hidden;}
+            .ani-2 p span{
+                display: inline-block;
+                font-size: 10rem;
+                transform: translateY(100%);
+                animation-name: ani-2;
+                animation-duration: 1s;
+                animation-fill-mode: forwards; /*100%멈춤*/
+            }
+            
+            .ani-2 p span:nth-child(1){}
+            .ani-2 p span:nth-child(2){animation-delay: 0.5s;}
+            .ani-2 p span:nth-child(3){animation-delay: 1s;}
+            .ani-2 p span:nth-child(4){animation-delay: 1.5s;}
+            @keyframes ani-2{
+                100%{transform: translateY(0%);}
+            }
+        </style>
+
+    </article>
+
+
+    <article>
+        <h2> Text animation - svg </h2>
+        <div class="ani-3">
+            <svg xmlns="http://www.w3.org/2000/svg" 
+            width="200" height="200" 
+            viewBox="0 -960 960 960">
+            <path d="m393-165 279-335H492l36-286-253 366h154l-36 255Zm-73 85 40-280H160l360-520h80l-40 320h240L400-80h-80Zm153-395Z"/></svg>
+
+            <svg width="1000" height="600">
+                <rect x="0" y="0" width="200" height="200"></rect>
+                <rect x="250" y="0" rx="30" width="200" height="200"></rect>
+                <circle cx="600" cy="100" r="100"></circle>
+                <g>
+                    <line x1="0" y1="250" x2="200" y2="250" stroke="red"></line>
+                    <line x1="200" y1="250" x2="100" y2="350" stroke="red"></line>
+                    <line x1="100" y1="350" x2="0" y2="250" stroke="red"></line>
+                </g>
+                <image x="250" y="250" width="200" href="./img/05.jpg"></image>
+                <text x="500" y="350" font-size="100">SVG</text>
+            </svg>
+                
+            <svg width="800" height="600">
+                <defs>
+                    <path id="text-line" d="M100,300 Q200,200 350,300 Q550,450 700,300"></path>
+                </defs>
+                <text font-size="30" fill="black" y="60%">
+                    <textPath xlink:href="#text-line">
+                        TextPath를 활용한 곡선 따라다니는 문자 만들기
+                    </textPath>
+                </text>
+            </svg>
+
+            <svg width="700" height="400">
+                <mask id="txt-mask">
+                    <text x="150" y="300" font-size="100" fill="white" font-weight="700">
+                        SVG MASK
+                    </text>
+                </mask>
+
+                <image mask="url(#txt-mask)" x="100" y="0" href="./img/03.jpg"></image>
+            </svg>
+
+        </div>
+
+        <style>
+            .ani-3{}
+            .ani-3 svg{}
+            .ani-3 svg path{
+                fill: transparent;
+                stroke: black;
+                stroke-width: 5px;
+                stroke-dasharray: 3000px;
+                stroke-dashoffset: 3000px;
+
+                animation: svg 5s forwards;
+            }
+            @keyframes svg{
+                50%{stroke-dashoffset: 0px;}
+                100%{
+                    fill: #f8df00;
+                    stroke-dashoffset: 0px;
+                    stroke-width: 0;
+                }
+            }
+        </style>
+
+    </article>
+
+
+    <article>
+        <h2>ex)</h2>
+        <div class="ex">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="200" height="200">
+                <path d="M23.535,14.725a1.99,1.99,0,0,0-1.726-.716A11.993,11.993,0,0,0,13,18.987V13.91A6.006,6.006,0,0,0,18,8c0-2.793-1.943-5.152-3.844-7.091a3.085,3.085,0,0,0-4.312,0C7.943,2.848,6,5.207,6,8a6.006,6.006,0,0,0,5,5.91v5.077a11.993,11.993,0,0,0-8.809-4.978,1.992,1.992,0,0,0-1.726.716,1.971,1.971,0,0,0-.393,1.792C2.111,23.855,11.591,24,11.994,24h.012c.4,0,9.884-.145,11.923-7.483A1.975,1.975,0,0,0,23.535,14.725ZM8,8c0-2.654,3.318-5.719,3.338-5.736C10.973,3.2,8.693,8.9,11,9a1,1,0,0,0,1-1,13.472,13.472,0,0,1,1.257-5.137C14.688,4.393,16,6.154,16,8A4,4,0,0,1,8,8ZM2.006,16a10.268,10.268,0,0,1,8.462,5.863C7.971,21.517,3.2,20.3,2.006,16Zm11.539,5.861A10.379,10.379,0,0,1,22,15.981C20.806,20.283,16.046,21.511,13.545,21.861Z"/></svg>
+        </div>
+
+        <style>
+            .ex{}
+            .ex svg{}
+            .ex svg path{
+                fill: black;
+                stroke: transparent;
+                stroke-width: 3px;
+                stroke-dasharray: 200px;
+                stroke-dashoffset: 200px;
+
+                animation: Layer_1 3s forwards;
+            }
+            @keyframes Layer_1{
+                0%{stroke-dashoffset: 200px;}
+                100%{
+                    fill: rgb(253, 132, 253);
+                    stroke-dashoffset: 0px;
+                    stroke-width: 0;
+                    stroke: rgb(16, 99, 0);
+                }
+            }
+        </style>
+
+    </article>
+
+</body>
+</html>

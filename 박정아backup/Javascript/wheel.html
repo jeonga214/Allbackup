@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="height:100vh; overflow:hidden;">
+
+    <!-- wheel.html -->
+    <main>
+        <section>01</section>
+        <section>02</section>
+        <section>03</section>
+        <section>04</section>
+        <section>05</section>
+    </main>
+
+    <aside></aside>
+
+    <style>
+        section{
+            height:100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section:nth-child(2n){ background-color: #ddd;  }
+        aside{
+            position:fixed; right:5%; top:50%;
+        }
+        aside a{
+            width:10px; height:10px; margin:10px 0;
+            background-color: black;
+            border-radius: 100%;
+            display:block;
+        }
+    </style>
+
+    <script>
+        const elSelection = document.querySelectorAll('section'),
+              elAside = document.querySelector('aside');
+        let move = 0;
+
+        elSelection.forEach(function(section,key){
+            elAside.innerHTML += '<a></a>';
+            section.addEventListener('wheel',function(e){
+                conMove(e,key);
+            })
+        });
+
+
+        function conMove(e, key){
+            
+            try{
+                if(e.wheelDelta < 0){                    
+                    move = elSelection[key].nextElementSibling.offsetTop                    
+                }else{
+                    move = elSelection[key].previousElementSibling.offsetTop;                    
+                }
+            }
+            catch{}
+            finally{
+                window.scrollTo({
+                    top:move,
+                    left:0,
+                    behavior:'smooth'
+                });
+            }
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

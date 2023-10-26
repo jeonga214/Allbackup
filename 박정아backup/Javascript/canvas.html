@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <canvas width="1000" height="900">
+        캔버스가 호환되지않습니다. 다른 브라우저를 이용하세요.
+    </canvas>
+
+    <script>
+        const canvas = document.querySelector('canvas'),
+                ctx = canvas.getContext('2d');
+
+                ctx.fillRect(100,50,200,200);
+                ctx.strokeRect(100,300,200,200);
+
+                // x,y,r,start,end,direction(시계,반시계)
+                ctx.lineWidth = 20;
+                ctx.lineCap = 'round';
+                ctx.strokeStyle = 'green';
+
+                ctx.arc(200,650,100,0,Math.PI,true);
+                ctx.stroke();
+                ctx.closePath();
+
+
+                ctx.beginPath();
+                ctx.lineTo(350,150);
+                ctx.lineTo(500,150);
+                ctx.stroke();
+                ctx.closePath();
+
+                const newImg = new Image();
+                newImg.src = './img/01.jpg';
+
+                newImg.addEventListener('load',()=>{
+                    ctx.drawImage(newImg,350,300,200,200);
+                    ctx.drawImage(newImg,300,200,400,400, 600,300,200,200);
+                })
+
+
+                const newVideo = document.createElement('video');
+                newVideo.src = './img/cat_-_51358 (720p).mp4';
+                newVideo.muted = 'muted';
+                newVideo.play();
+                
+                newVideo.addEventListener('loadedmetadata',(e)=>{
+                    //메타 데이터 - 재생시간 정보 확인
+                    console.log(e);
+                })
+
+                newVideo.addEventListener('loadeddata',()=>{
+                    //동영상 프레임 조금이라도 준비가 되면 발생
+                    console.log();
+                })
+
+                newVideo.addEventListener('canplay',()=>{
+                    //동영상 재생시 발생
+                    console.log();
+                })
+                
+                newVideo.addEventListener('canplaythrough',(e)=>{
+                    //동영상 전체가 끊김없이 재생할 수 있을때
+                    console.log(e);
+                    videoDraw();
+                })
+
+                let aaa;
+                function videoDraw(){
+                    ctx.drawImage(newVideo,600,50,300,200);
+                    
+                    if(!newVideo.ended){
+                        aaa = requestAnimationFrame(videoDraw);
+                    }else{
+                        cancelAnimationFrame(aaa);
+                    }
+
+                    //재귀함수
+                    //videoDraw();
+                }
+
+                let num = 0;
+                function skill(){
+                    num++;
+
+                    ctx.clearRect(590,640,1000,900);
+                    ctx.beginPath();
+                    ctx.arc(700,750,100,0, (Math.PI*2)* num/100 ,false);
+                    ctx.stroke();
+                    ctx.closePath();
+
+                    if(num<80){
+                        requestAnimationFrame(skill);
+                    }
+                }
+                skill();
+
+                function sss(){
+                    this.width = 20;
+                    this.color = 'red';
+                    this.x = 500;
+                    this.y = 500;
+                    this.size = [200,200];
+                    this.draw = function(){
+                        return 'draw';
+                    }
+                }
+
+                let obj = new sss();
+
+                console.log(obj.draw());
+
+    </script>
+
+</body>
+</html>

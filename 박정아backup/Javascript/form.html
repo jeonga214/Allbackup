@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <article>
+        <h2> form 활용 </h2>
+        <form id="member" action="./class.html">
+            <p><input type="text" name="id" placeholder="id"></p>
+            <p>
+                <input type="password" name="pw" placeholder="pw">
+                <button>패스워드확인</button>
+            </p>
+            <p><input type="email" name="email" placeholder="email"></p>
+            <p><input type="tel" name="tel" placeholder="phone"></p>
+            <p><input type="submit" value="저장"></p>
+        </form>
+    </article>
+
+    <script>
+        const elInput = document.querySelectorAll('input');
+
+        window.addEventListener('submit',(e)=>{
+            e.preventDefault();
+            
+            let regId = /^(?=.*[\W_])(?=.*\d)[A-Za-z\d\W_]{8,15}$/;
+            let regEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let regTel = /^(\d{2,3}-\d{3,4}-\d{4})|(02-\d{3,4}-\d{4})$/;
+
+            if(!regId.test(elInput[0].value)){
+                alert('아이디를 다시 입력해 주세요.');
+                elInput[0].focus();
+                return;
+            }
+            // qsdff12!
+
+            if(!regEmail.test(elInput[2].value)){
+                alert('이메일을 다시 입력해 주세요');
+                return;
+            }
+            //q123dadf@f1fo.com
+
+            if(!regTel.test(elInput[3].value)){
+                alert('전화번호를 다시 입력해 주세요.');
+                return;
+            }
+            //010-3272-3020
+
+            member.submit();
+        })
+
+    </script>
+
+
+    <article id="article">
+        <h2> 체크 </h2>
+        <p><input type="checkbox" id="check1">동의1</p>
+        <p><input type="checkbox" id="check2">동의2</p>
+        <p><input type="checkbox" id="checkAll">전체동의</p>
+    </article>
+
+    <script>
+        article.addEventListener('click',(e)=>{
+            if(e.target.id == 'checkAll'){
+                check1.checked = e.target.checked;
+                check2.checked = e.target.checked;
+            }
+            
+            if(check1.checked && check2.checked){
+                checkAll.checked = true;
+            }else{
+                checkAll.checked = false;
+            }
+        })
+        
+    </script>
+
+    <article>
+        <h2> file 이미지 미리보기 </h2>
+        <div>
+            <input type="file" id="upload">
+            <img src="" id="preview">
+        </div>
+    </article>
+
+    <script>
+        upload.addEventListener('change',()=>{
+            
+            let reader = new FileReader();
+            reader.readAsDataURL(upload.files[0]);
+
+            reader.onload = (e)=>{
+                preview.src = e.target.result;
+            };
+            
+        })
+    </script>
+
+</body>
+</html>

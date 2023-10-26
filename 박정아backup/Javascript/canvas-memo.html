@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="color" id="elColor">
+    <select id="elLineSize">
+        <option>1</option>
+        <option>3</option>
+        <option>6</option>
+    </select>
+    <button id="remove">지우기</button>
+    <a href="#" download="canvas-test.png" id="save">저장</a>
+    
+
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+    <style>
+        canvas{
+            border: 1px solid gray;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+    
+    <script>
+        let ctx = canvas.getContext('2d');
+        let cSize = {w:canvas.width, h:canvas.height}
+        let status = false, 
+        lineColor = elColor.value, 
+        lineSize = elLineSize.value;
+
+
+        save.addEventListener('click',function(){
+            this.href = canvas.toDataURL();
+        })
+
+        remove.addEventListener('click',function(){
+            ctx.clearRect(0,0,500,500);
+        })
+
+        elColor.addEventListener('change',function(){
+            lineColor = this.value;
+        })
+
+        elLineSize.addEventListener('change',function(){
+            lineSize = this.value;
+        })
+
+        canvas.addEventListener('mousedown',function(){
+            ctx.beginPath();
+            status = true;
+        })
+
+        canvas.addEventListener('mouseup',function(){
+            status = false;
+        })
+
+        canvas.addEventListener('mousemove',drawMove);
+
+        function drawMove(e){
+            if(status){
+                ctx.strokeStyle = lineColor;
+                ctx.lineWidth = lineSize;
+                ctx.lineTo(e.offsetX,e.offsetY);
+                ctx.stroke();
+            }
+
+        }
+
+
+    </script>
+
+</body>
+</html>

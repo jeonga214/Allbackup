@@ -1,0 +1,14 @@
+$mobile : ('max-width: 480px', 'max-width: 767px');
+$tablet : ('min-width: 768px', 'max-width: 1279px');
+$pc : ('min-width: 1280px');
+
+
+@mixin device($dp){
+
+    @media($dp){
+        @content;
+    }
+}
+
+
+

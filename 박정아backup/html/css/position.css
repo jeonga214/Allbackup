@@ -1,0 +1,126 @@
+@import url("./reset.css");
+
+article{
+    width:50%; margin:100px auto;
+    line-height: 2;
+}
+article > p{
+    white-space: pre-line;
+    background-color: aliceblue;
+    padding:30px;
+}
+
+.pos-1{
+    position:relative;
+    left:100px; top:-30px;
+}
+.pos-1 img{width:100%;}
+.pos-1 > a{
+    position: absolute;
+    top:0; right:0;
+
+    background-color: black;
+    color:#fff;
+    font-size:40px;
+
+    width:40px; height:40px;
+    line-height: 30px;
+    text-align: center;
+    transition: width 1s, height 1s;
+}
+
+.pos-1:hover > a{
+    background-color: #ffffa5;
+    width:100%;
+    height:100%;
+}
+
+
+.pos-2{
+    background-color: #28b604;
+    color: white;
+    padding:60px;
+    border-radius: 30px;
+
+    position:absolute;
+    right:0; bottom:0;
+}
+
+.pos-3{
+    background-color: black;
+    width:10%; height:100%;
+    position: fixed;
+    left:0; top:0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+.pos-3 a{color:white}
+
+.pos-4{
+    display: flex;
+}
+
+.pos-4 div:nth-child(1){
+    width: 30%; height: 100px;
+    position: sticky; 
+    top: 100px;
+}
+
+.pos-4 div:nth-child(2){width: 70%;}
+.pos-4 div:nth-child(2) p{
+    position: sticky;
+    bottom: 0px;
+}
+.pos-4 div:nth-child(2) img{width: 100%;}
+
+
+.ex{}
+
+
+.ex > .as{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ex > .as > div{
+    width: 30%; 
+    position: relative; 
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.ex > .as > div > img{width: 100%;}
+.ex > .as > div > p{
+    background-color: #286bfd;
+    padding: 10px 20px;
+    color: white;
+
+    position: absolute;
+    left: -200px; top: 0;
+    opacity: 0;
+
+    transition: 0.5s ;
+}
+
+.ex > .as > div:hover >p{
+    background-color: #28b604;
+    opacity: 100;
+    left: 0;
+}
+
+
+.ex2{
+    width: 300px;
+    position: fixed;
+    right: 30px; bottom: -200px;
+    border-radius: 30px; overflow: hidden;
+    margin: 0;
+    transition: 1s;
+}
+.ex2 h2{text-align: center; color: white; background-color: #286bfd; margin: 0; padding: 10px;}
+.ex2 p{background-color: aliceblue; padding: 80px 0; text-align: center;}
+.ex2:hover{bottom: 30px;}

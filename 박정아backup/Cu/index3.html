@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NICE TO CU</title>
+
+    <link rel="stylesheet" href="./index3.css">
+    <link rel="icon" href="./img/logo_top.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script defer src="./js/common.js"></script>
+    <script defer src="./js/index3.js"></script>
+</head>
+
+<body>
+
+    <main>
+        <section class="intro_1">
+            <div class="a-1">
+                <p>나만의 놀이터 CU<br>
+                    즐거운 상품과 서비스를 확인해보세요.</p>
+                <div class="a-2">
+                    <a href="https://www.facebook.com/CU.BGFretail.cvs"><img src="./img2/ico_facebook (1).png" alt=""></a>
+                    <a href="https://twitter.com/BGFretail"><img src="./img2/ico_twitter.png" alt=""></a>
+                    <a href="#"><img src="./img2/ico_copyurl.png" alt=""></a>
+                </div>
+                <div class="a-3">
+                    <a href="#"><img src="./img2/ico_plus.png" alt=""></a>
+                    <a href="#"><img src="./img2/ico_minus.png" alt=""></a>
+                </div>
+            </div>
+        </section>
+            
+        <!-- sub nav -->
+        
+        <section class="intro_2">
+            <ul>
+                <li><a href="./index3.html">전체상품</a></li>
+                <li><a href="#">CU 차별화 상품</a></li>
+                <li><a href="#">행사상품</a></li>
+            </ul>
+        </section>
+    
+        <div class="content_index">
+            <div>
+                <div class="whole_nav">
+                    <a href="#">간편식사</a>
+                    <a href="#">즉석조리</a>
+                    <a href="#">과자류</a>
+                    <a href="#">아이스크림</a>
+                    <a href="#">식품</a>
+                    <a href="#">음료</a>
+                    <a href="#">생활용품</a>
+                </div>
+                <div class="whole_content">
+    
+                    <div class="detail_content">
+                        <div class="top_nav">
+                            <!-- <a href="#" class="top">전체</a>
+                            <a href="#" class="top">도시락</a>
+                            <a href="#" class="top">샌드위치/햄버거</a>
+                            <a href="#" class="top">주먹밥/김밥</a> -->
+                        </div>
+            
+                        <ul class="table">
+                            <li>
+                                <b>가격대 검색</b>
+                                <p class="money">
+                                    <span class="search_radio">
+                                        <input id="money1" type="radio" name="i" value="0, 1500"><label for="money1"> 1,500원 이하</label>
+                                        <input id="money2" type="radio" name="i" value="1500, 3000"><label for="money2"> 1,500원~3,000</label>
+                                        <input id="money3" type="radio" name="i" value="5000,"><label for="money3"> 5,000원 이상</label>
+                                    </span>
+                                    <span class="search_money">
+                                        <input type="text" name="ii"><span>원 ~</span>
+                                        <input type="text" name="ii"><span>원</span>
+                                    </span>
+                                </p>
+                                <p class="search_submit">
+                                    <input type="submit" value="검색">
+                                    <input onclick="test()" type="reset" id="reset">
+                                </p>
+                            </li>
+                            <li>
+                                <b>검색</b>
+                                <p class="search_text">
+                                    <span>
+                                        <input type="text">
+                                    </span>
+                                </p>
+                            </li>
+                        </ul>
+                        
+                        <div class="top_nav2">
+                            <a href="#">전체</a>
+                            <a href="#">할인증정상품</a>
+                            <a href="#">최신등록순</a>
+                            <a href="#">낮은 가격순</a>
+                            <a href="#">높은 가격순</a>
+                        </div>
+            
+                        <section class="whole_product">
+                            <div class="d-1">
+                    
+                                <div class="d">
+                    
+                                    
+                                        <!-- <div class="miss">
+                                            <div class="d-2-1">
+                                                <a href="#">
+                                                    <img src="./img/1_8801753110624.jpg" alt="도시락">
+                                                    <div>
+                                                        <p>연세)말차생크림빵</p>
+                                                        <strong>3,400</strong><span>원</span>
+                                                    </div>
+                                                    <div class="tag">
+                                                        <img src="./img/tag_new.png" alt="">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="miss">
+                                            <div class="d-2-1">
+                                                <a href="#">
+                                                    <img src="./img/1_8801771027539.jpg" alt="">
+                                                    <div>
+                                                        <p>도)자이언트고기한쌈매콤</p>
+                                                        <strong>9,900</strong><span>원</span>
+                                                    </div>
+                                                    <div class="tag">
+                                                        <img src="./img/tag_new.png" alt="">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="miss">
+                                            <div class="d-2-1">
+                                                <a href="#">
+                                                    <img src="./img/1_8801771027638.jpg" alt="">
+                                                    <div>
+                                                        <p>면)종가열무김치비빔국수</p>
+                                                        <strong>5,000</strong><span>원</span>
+                                                    </div>
+                                                    <div class="tag">
+                                                        <img src="./img/tag_new.png" alt="">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="miss">
+                                            <div class="d-2-1">
+                                                <a href="#">
+                                                    <img src="./img/1_8809367692772.jpg" alt="">
+                                                    <div>
+                                                        <p>팔도한끼)해초비빔밥</p>
+                                                        <strong>4,900</strong><span>원</span>
+                                                    </div>
+                                                    <div class="tag">
+                                                        <img src="./img/tag_new.png" alt="">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+            
+                                        <div class="miss">
+                                            <div class="d-2-1">
+                                                <a href="#">
+                                                    <img src="./img/1_8801753110624.jpg" alt="">
+                                                    <div>
+                                                        <p>연세)말차생크림빵</p>
+                                                        <strong>3,400</strong><span>원</span>
+                                                    </div>
+                                                    <div class="tag">
+                                                        <img src="./img/tag_new.png" alt="">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="miss">
+                                            <div class="d-2-1">
+                                                <a href="#">
+                                                    <img src="./img/1_8801771027539.jpg" alt="">
+                                                    <div>
+                                                        <p>도)자이언트고기한쌈매콤</p>
+                                                        <strong>9,900</strong><span>원</span>
+                                                    </div>
+                                                    <div class="tag">
+                                                        <img src="./img/tag_new.png" alt="">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="miss">
+                                            <div class="d-2-1">
+                                                <a href="#">
+                                                    <img src="./img/1_8801771027638.jpg" alt="">
+                                                    <div>
+                                                        <p>면)종가열무김치비빔국수</p>
+                                                        <strong>5,000</strong><span>원</span>
+                                                    </div>
+                                                    <div class="tag">
+                                                        <img src="./img/tag_new.png" alt="">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="miss">
+                                            <div class="d-2-1">
+                                                <a href="#">
+                                                    <img src="./img/1_8809367692772.jpg" alt="">
+                                                    <div>
+                                                        <p>팔도한끼)해초비빔밥</p>
+                                                        <strong>4,900</strong><span>원</span>
+                                                    </div>
+                                                    <div class="tag">
+                                                        <img src="./img/tag_new.png" alt="">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+            
+                                        <div class="miss">
+                                            <div class="d-2-1">
+                                                <a href="#">
+                                                    <img src="./img/1_8801753110624.jpg" alt="">
+                                                    <div>
+                                                        <p>연세)말차생크림빵</p>
+                                                        <strong>3,400</strong><span>원</span>
+                                                    </div>
+                                                    <div class="tag">
+                                                        <img src="./img/tag_new.png" alt="">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="miss">
+                                            <div class="d-2-1">
+                                                <a href="#">
+                                                    <img src="./img/1_8801771027539.jpg" alt="">
+                                                    <div>
+                                                        <p>도)자이언트고기한쌈매콤</p>
+                                                        <strong>9,900</strong><span>원</span>
+                                                    </div>
+                                                    <div class="tag">
+                                                        <img src="./img/tag_new.png" alt="">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="miss">
+                                            <div class="d-2-1">
+                                                <a href="#">
+                                                    <img src="./img/1_8801771027638.jpg" alt="">
+                                                    <div>
+                                                        <p>면)종가열무김치비빔국수</p>
+                                                        <strong>5,000</strong><span>원</span>
+                                                    </div>
+                                                    <div class="tag">
+                                                        <img src="./img/tag_new.png" alt="">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="miss">
+                                            <div class="d-2-1">
+                                                <a href="#">
+                                                    <img src="./img/1_8809367692772.jpg" alt="">
+                                                    <div>
+                                                        <p>팔도한끼)해초비빔밥</p>
+                                                        <strong>4,900</strong><span>원</span>
+                                                    </div>
+                                                    <div class="tag">
+                                                        <img src="./img/tag_new.png" alt="">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div> -->
+            
+                                        
+                                </div>
+                    
+                            </div>
+                            
+                        </section>
+            
+                        <div class="whole_show">
+                            <div class="whole_add">
+                                <a href="#">더보기</a>
+                            </div>
+                            <div class="whole_up">
+                                <a href="#">맨위로</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product_detail">
+                        <img src="./img3/8801068915976.jpg">
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </main>
+
+        <!-- 나만의 놀이터 -->
+
+
+
+</body>
+</html>

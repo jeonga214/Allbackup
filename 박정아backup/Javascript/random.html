@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // Math.random()
+        // 반올림(Math.round()), 
+        // 소수점제거(Math.floor()), 
+        // 무조건반올림(Math.ceil())
+
+        let ran =Math.random()*10
+
+        console.log( ran );
+        console.log( Math.ceil(ran) );
+    </script>
+
+    <script>
+        let bg = function(n){
+            return Math.round( Math.random() * n );
+        }
+
+        const elBody = document.querySelector('body');
+        elBody.style.background = `rgba(${bg(255)},${bg(255)},${bg(255)},${bg(100)}%)`;
+        console.log(bg());
+    </script>
+
+
+    <article class="random-img">
+        <h2>random 이미지</h2>
+        <img src="">
+    </article>
+    <script>
+        let imgs= ['01.jpg','02.jpg','03.jpg','04.jpg'];
+
+        const elRandom = document.querySelector('.random-img img');
+
+            let num = Math.round( Math.random() * 3 );
+            // elRandom.src = `./img/${imgs[num]}`;
+
+                // elRandom.getAttribute('src')
+            elRandom.setAttribute('src',`./img/${imgs[num]}`)
+
+
+
+
+    </script>
+
+</body>
+</html>

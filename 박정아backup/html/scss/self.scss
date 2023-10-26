@@ -1,0 +1,176 @@
+$m-wid : 1400px;
+
+@mixin reset {margin:0;padding:0; @content;}
+@mixin flex($x:center,$y:center){display:flex; justify-content: $x; align-items: $y; @content;}
+@mixin font($z:'400',$d:'16px') {font-weight: $z;font-size: $d;}
+
+@import "_mixin";
+@import "_reset";
+
+p {white-space: pre-line;}
+a {text-decoration: none; color:#000;}
+*{box-sizing: border-box}
+
+body,html {@include reset; font-family: 'Inter', sans-serif;}
+header{
+    @include reset;
+    @include flex(space-between);
+    max-width:$m-wid;
+    width:100%;
+    margin:20px auto;
+    nav{
+        @include reset {list-style:none;};
+        @include flex(space-evenly);
+        width:100%;
+        a{
+            @include font(400,20px);
+            
+            &:hover{
+                @include font(700,20px);
+            }
+        }
+    }
+    figure{
+        @include reset;
+        img{
+        }
+    }
+}
+
+main{
+    article.srot1{
+        position:relative;
+        @include flex();
+        h1{
+            @include reset;
+            @include font(400,70px);
+            position:absolute;
+            color:rgba(255,255,255,0.8);font-style: italic;
+        }
+        figure{
+            @include reset;
+            img {
+                width: 100%; object-fit: cover;
+            }
+        }
+    }
+
+    article.srot2 {
+        margin:155px auto;
+        @include flex();
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        h1 {
+            font-size:30px;
+
+            &::after{
+                content: '';
+                margin:30px auto 0;
+                display:block;
+                height:1px;
+                width:40%;
+                border-bottom:2px solid #000;
+            }
+        }
+        p {
+            @include font(300,15px);
+        }
+        ul {
+            @include flex();
+            @include reset {list-style:none;}
+            margin-top:100px;
+            li {
+                margin:0 45px;
+                figure{
+                @include flex(){flex-wrap: wrap; flex-direction: column;};
+                @include reset {}
+                    p {
+                        height:320px;overflow: hidden;
+                        img {
+                            transition: 0.5s;
+                            &:hover{
+                                transform: scale(1.1);
+                            }
+                        }
+                        
+                    }
+                    figcaption {
+                        margin:40px auto;
+                        @include font(300,15px);
+                    }
+                }
+            }
+        }
+    }
+
+
+    section.srot3{
+        @include reset {}
+        margin-bottom:200px;
+        position: relative;
+        > figure:nth-of-type(1){
+            @include reset {}
+            img {
+                width:100%; object-fit: cover;
+            }
+        }
+        >div {
+            max-width:$m-wid;
+            position: absolute;
+            top:0; left:0;right:0;
+            margin:0 auto;
+            height:100%;
+            div {
+                width: 700px;
+                position: absolute;
+                bottom:20%;
+                right:5%;                 
+                >h1 {
+                    @include font(700,30px);
+                    text-shadow: 0 4px 4px rgba(0,0,0,.25);
+                    span {color:red}
+                }
+                >p{text-shadow: 0 4px 4px rgba(0,0,0,.25);}
+                ul {
+                    @include flex(space-between,flex-start){};
+                    @include reset {list-style:none;}
+                    margin-top:45px;
+                    li {
+                        figure {
+                            @include reset {}
+                            > p {width:170px; height:170px; @include flex(center,center){}; background: #fff; border:3px solid #7a7a7a; border-radius:50%; box-shadow: 0 5px 30px rgba(0,0,0,0.5);}
+                            figcaption {
+                                @include flex(){flex-wrap: wrap; flex-direction: column;};
+                                b {@include font(700,20px);}
+                                p {@include font(300,14px); text-align: center; color:#6e6e6e}
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+@import "_m-self";
+
+
+// 1. 해상도 스타일(디바이스별 사이즈, mixin, media) => _media.scss
+// 2. 각 페이지별 반응형 스타일 => _m-self.scss
+
+
+
+// _reset.scss(태그초기화, 공통스타일, 변수 or 믹스인)
+// _common.scss(공통스타일)
+// _media.scss(반응형 분기점 선언)
+
+// 공통 믹스인(컬러,버튼,팝업,그리드...)
+// _mixin.scss
+// _variable.scss
+
+// #각페이지별 스타일 문서
+// index.scss/_m-index.scss(mobile,ipad)
+// sub.scss/_m-sub.scss(mobile,ipad)

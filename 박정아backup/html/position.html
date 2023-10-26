@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/position.css">
+</head>
+<body>
+    <!-- relative, absolute, fixed, stickey -->
+    <article>
+        <h2>Position</h2>
+        <p> * position:static / relative / absolute / fixed / sticky
+            * 좌표속성( left, right, top, bottom)
+        </p>
+        <ul>
+            <li>static - 기본값(반응형작업시 포지션 해제)</li>
+            <li>relative - 상대좌표(자기 자신을 기준으로 배치)</li>
+            <li>absolute - 절대좌표(부모요소를 기준으로 배치)</li>
+            <li>fixed - 고정좌표(뷰포트 기준으로 배치)</li>
+            <li>sticky - 상대,고정 혼합(스크롤 영역 기준으로 배치)</li>
+        </ul>
+    </article>
+
+    <article id="pos-1">
+        <h2>relative & absolute</h2>
+        <p> * relative 대부분 absolute와 함께 사용.
+            * 문서 상 원래 위치가 그대로 유지됨.
+            * 위치를 이동하면서 다른 콘텐츠에 영향을 주지않음.
+            * 원래 위치를 기준으로 상하좌우로 이동 가능.
+        </p>
+        <div class="pos-1">
+            <img src="./img/05.jpg">
+            <a> + </a>
+        </div>
+    </article>
+
+    <article style="position: relative;" id="pos-2">
+        <h2>absolute</h2>
+        <p> * 문서상 원래 위치가 사라진다.
+            * 위치를 이동하면서 다른 콘텐츠에 영향을 주지않음.
+            * 부모 위치를 기준으로 상하좌우로 이동 가능.
+            * 부모 크기에 영향을 주지 않음.
+            * 페이지 스크롤 영향을 받음.
+        </p>
+        <div class="pos-2">
+            공지사항, 알림창...
+        </div>
+    </article>
+
+
+    <article id="pos-3">
+        <h2>fixed</h2>
+        <p> * 문서상 원래 위치가 사라진다.
+            * 위치를 이동하면서 다른 콘텐츠에 영향을 주지않음.
+            * 부모 크기에 영향을 주지 않음.
+            * 페이지 스크롤 영향을 받지 않음(고정).
+            * 헤더, top버튼, 우측배너
+            * 3가지 스타일(filter, perspective, transform)
+        </p>
+        <div class="pos-3">
+            <a href="#pos-1">relative</a>
+            <a href="#pos-2">absolute</a>
+            <a href="#pos-3">fixed</a>
+            <a href="#pos-4">stickey</a>
+            <a href="#pos-5">position</a>
+        </div>
+    </article>
+
+    <article id="pos-4">
+        <h2>sticky</h2>
+        <p> * 문서상 원래 위치는 그대로.
+            * 다른 콘텐츠에 영향을 주지 않음.
+            * 스크롤이 해당 콘텐츠에 닿으면 고정됨.
+        </p>
+        <div class="pos-4">
+            <div>파일명</div>
+            <div>
+                <p><img src="./img/01.jpg"></p>
+                <p><img src="./img/02.jpg"></p>
+                <p><img src="./img/03.jpg"></p>
+                <p><img src="./img/04.jpg"></p>
+                <p><img src="./img/06.jpg"></p>
+            </div>
+        </div>
+    </article>
+
+    <article class="ex" id="pos-5">
+        
+        <h2>ex) position</h2>
+
+        <div class="as">
+            <div>
+                <img src="./img/07.jpg">
+                <p>2023-06-02</p>
+            </div>
+    
+            <div>
+                <img src="./img/08.jpg">
+                <p>2023-06-02</p>
+            </div>
+    
+            <div>
+                <img src="./img/02.jpg">
+                <p>2023-06-02</p>
+            </div>
+    
+        </div>
+    </article>
+
+    <article class="ex2">
+                <h2>ex) position</h2>
+                <p>dflsflsdlfkl;safkla;</p>
+    </article>
+
+</body>
+</html>

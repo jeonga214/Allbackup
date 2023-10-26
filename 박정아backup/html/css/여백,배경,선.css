@@ -1,0 +1,118 @@
+@import url('./reset.css');
+
+/* 부분주석 (alt + shift + a) */
+article{
+    width:500px;
+    border:5px solid black;
+
+    margin:100px 0 0 100px; /* 상,우,하,좌 / 12, 3, 6, 9 */
+    margin:100px 100px 0 ;  /* 상, 좌우, 하 */
+    margin:100px 100px ;  /* 상하, 좌우 */
+    margin:100px;  /* 상하좌우 */
+
+    margin-top:100px;
+    margin-right:100px;
+    margin-left:100px;
+    margin-bottom:100px;
+
+    margin: 100px auto;
+
+    /* 안쪽여백(auto 사용못함) */
+    padding : 60px;
+}
+
+
+/* 선 */
+.border div:nth-of-type(1){
+    border:1px solid red;
+}
+.border div:nth-of-type(2){
+    margin-top:30px;
+    border-bottom:1px solid blue;
+    /* 
+        border-width:1px 0px;
+        border-style:solide double;
+        border-color:black red; 
+    */
+    border-top-color:brown;
+    border-top-width:10px;
+    border-top-style:solid;
+}
+.border div:nth-of-type(3){
+    margin-top:30px;
+    border:3px solid black;
+    border-radius: 30px 0px 30px 0;
+    padding:20px;
+}
+
+
+.bg{ width:1000px;}
+
+.bg p{
+    height:400px;
+}
+.bg p:nth-of-type(1){
+    background-color:#f00;
+}
+.bg p:nth-of-type(2){
+    background-image: url('../img/06.jpg');
+    background-size: 100% ;
+    background-repeat: no-repeat;
+    /* no-repeat, repeat-x, repeat-y */    
+}
+.bg p:nth-of-type(3){
+    background-color: yellow;
+    background-image: url('../img/06.jpg');
+    background-size: 10% ;
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    /* left,center,right | top center bottom */
+}
+.bg p:nth-of-type(4){
+    background-image: url('../img/06.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.bg p:nth-of-type(5){
+    /* 
+        color, url, position / size repeat attachment
+        color, url, position, repeat, attachment
+        color, url, position, repeat
+    */
+    background:red url('../img/02.jpg') center / 100% no-repeat fixed;
+}
+
+.icon h2{
+    text-align: center;
+}
+.icon h2:before{
+    content: '';
+    display: block;
+    margin:0 auto;
+    width:44px; height:44px;
+    border:1px solid black;
+    background:url('../img/sp_main.30918f90.png') -250px -90px / 422px ;
+}
+.icon h2:before, .icon h2 span{
+    vertical-align: middle;
+}
+
+/* 
+    1. margin: 0 auto 값은 block 속성에서 사용 가능
+    2. vertical-align 은 inline-block 속성에서 사용 가능
+    3. 가상선택자(before,after)는 inline속성이고 필수 속성은 content
+    4. text-align는 inline, inline-block속성을 정렬할 수 있음
+ */
+
+
+ .ex{
+    width:100%; height:100vh;   
+    background: url('../img/01.jpg') 0 0 / cover;
+    text-align: center;
+    padding-top:200px;
+    color:white;
+ }
+ .ex > b{font-size:60px;}
+ .ex > p{font-size:20px;}

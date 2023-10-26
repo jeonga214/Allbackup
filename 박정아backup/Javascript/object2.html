@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .list figure{
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px; padding: 0;
+        }
+        .list figure p{
+            margin-left: 30px;
+        }
+        .object2{width: 100%;}
+        .object2 p{
+            margin: 0 auto;
+        }
+    </style>
+
+    <article class="object2">
+        <p><!--현재상영,개봉예정--></p>
+
+        <div class="list">
+            <!-- <a href="#">
+                <figure>
+                    <figcaption>
+                        작품명 : ${obj.작품명}<br>
+                        개요 : ${obj.개요}<br>
+                        시간: ${obj.시간}<br>
+                        개봉 : ${obj.개봉}<br>
+                        평점: ${obj.평점}<br>
+                        출연 : ${obj.출연}
+                        </figcaption>
+                    <p><img src="${obj.포스터}" width="200"></p>
+                </figure>
+            </a> -->
+        </div>
+    </article>
+
+    <script>
+        const   elP = document.querySelector('.object2 > p'),
+                elList = document.querySelector('.object2 > .list');
+
+        let m_data = {
+            현재상영영화 : [
+                {
+                작품명 : '인디아나 존스: 운명의 ...',
+                개요: '액션',
+                시간: '154분',
+                개봉: '2023.06.28.',
+                평점: '8.14',
+                출연 : '해리슨 포드, 피비 월러',
+                포스터 : './img/01.jpg'
+                },
+                {
+                작품명 : '귀공자',
+                개요 : '액션',
+                시간: '154분',
+                개봉 : '2023.06.21.',
+                평점: '8.14',
+                출연 : '김선호, 강태주, 김강우',
+                포스터 : './img/02.jpg'
+                }
+            ],
+            개봉예정영화 : [
+                {
+                작품명 : '스파이더맨',
+                개요 : '애니메이션',
+                시간: '154분',
+                개봉 : '2023.06.21.',
+                평점: '8.14',
+                출연 : '샤메익 무어',
+                포스터 : './img/03.jpg'
+                },
+                {
+                작품명 : '엘리멘탈',
+                개요 : '애니메이션',
+                시간: '154분',
+                개봉 : '2023.06.14.',
+                평점: '8.14',
+                출연 : '레아 루이스, 마무두 아티',
+                포스터 : './img/04.jpg'
+                }
+            ]
+        }
+
+        for(const k in m_data){
+            elP.innerHTML += `<button>${k}</button>`;
+        }
+
+        const elButton = document.querySelectorAll('button');
+
+
+        elButton.forEach(function(button,k){
+
+            button.onclick = function(){
+                // elList.innerText = '';
+                let key = this.innerText
+
+                printFun(key);
+
+                }
+        })
+
+        let printFun = function(a){
+            elList.innerHTML='';
+            m_data[a].forEach(function(obj){
+                elList.innerHTML +=
+                    `<a href="#">
+                        <figure>
+                            <figcaption>
+                                작품명 : ${obj.작품명}<br>
+                                개요 : ${obj.개요}<br>
+                                시간: ${obj.시간}<br>
+                                개봉 : ${obj.개봉}<br>
+                                평점: ${obj.평점}<br>
+                                출연 : ${obj.출연}
+                                </figcaption>
+                            <p><img src="${obj.포스터}" width="200"></p>
+                        </figure>
+                    </a>`
+            })
+        }
+
+        printFun('현재상영영화');
+
+
+    </script>
+
+</body>
+</html>

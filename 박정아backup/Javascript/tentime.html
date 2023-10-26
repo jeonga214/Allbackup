@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <article class="ten-time">
+        <b>10초 동안 5문제</b>
+        <div class="start">
+            <button>start</button>
+        </div>
+        <div class="pro"></div>
+        <div class="submit">
+            <button>제출</button>
+        </div>
+        <style>
+            .ten-time{text-align: center;}
+            .ten-time b{display: inline-block; margin: 20px 0;}
+        </style>
+    </article>
+
+
+    <script>
+        let ranNum = function(n){
+            return Math.round(Math.random()*n);
+        }
+
+        let ddd = ranNum(1000);
+        let fff = ranNum(1000);
+        console.log(
+            `${ddd} + ${fff} =
+            ${ddd + fff}`
+        );
+
+        const elEx1 = document.querySelector('.ten-time .start button'),
+                elEx2 = document.querySelector('.ten-time .submit button'),
+                elPro = document.querySelector('.ten-time .pro');
+
+        let num = 0;
+        elEx1.onclick = function(){
+            setInterval(function(){
+                let a = `${ddd} + ${fff}`;
+                num++;
+                elPro.innerHTML=`<div>Q${num}. ${a}</div>
+                                <input type="text">`;
+            },2000)
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>

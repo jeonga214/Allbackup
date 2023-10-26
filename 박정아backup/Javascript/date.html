@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- date.html -->
+
+    <script>
+        let today = new Date();
+        console.log(
+            today.getFullYear(),
+            today.getMonth()+1, /* 0 ~ 11 */
+            today.getDate(),
+            ['일','월','화','수','목','금','토'][today.getDay()]  /* 0 ~ 6 */,
+
+            today.getHours(),
+            today.getMinutes(),
+            today.getSeconds(),
+
+            today.getTime(),
+
+            24*60*60*1000
+            // 시,분,초,밀리초
+        )
+
+
+        let day1 = new Date('2023-07-11'),
+            day2 = new Date('2023-07-14');
+
+            console.log( day1 <= today  && day2 >= today  )
+
+
+        let day3 = new Date('2023-08-15 0:0:0');
+        console.log(     Math.round((day3-today)/(24*60*60*1000))      )
+
+        //수정
+        today.setSeconds( today.getSeconds() + 10 )
+        console.log(
+            today.getSeconds()    
+        )
+    </script>
+
+
+    <article>
+        <h2>하루동안보지않기팝업</h2>
+        <figure><img src="./img/01.jpg"></figure>
+        <input type="checkbox">10초동안보지않기 
+        <button>닫기</button>
+    </article>
+    <style>
+        article{
+            position: fixed;
+            left:50%; top:50%; transform:translate(-50%,-50%)
+        }
+        figure{margin:0}
+    </style>
+
+    <script>
+        
+
+        const closeBtn = document.querySelector('button'),
+              checkBox = document.querySelector('input'),
+              popup = document.querySelector('article');
+
+              closeBtn.onclick = function(){
+                if( checkBox.checked) setCookie('oneday');
+                popup.style.display = 'none';
+              }
+
+            function setCookie(str){
+                let popDay = new Date();
+                    popDay.setDate(popDay.getDate()+1);
+                    document.cookie = `event=${str};expires=${popDay.toUTCString()}`;
+            }
+
+            function getCookie(str){
+                if(document.cookie.match(str)){
+                    popup.style.display = 'none';
+                }else{
+                    popup.style.display = 'block';
+                }
+            }
+            getCookie('oneday');
+
+    </script>
+
+
+
+</body>
+</html>
+

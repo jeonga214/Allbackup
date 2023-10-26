@@ -1,0 +1,4 @@
+[
+    {"id":"code100", "name":"p01", "price":"1000","thumb":"./logo192.png"},
+    {"id":"code200", "name":"p02", "price":"2000","thumb":"./logo512.png"}
+]
