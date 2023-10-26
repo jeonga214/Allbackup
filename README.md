@@ -58,13 +58,13 @@ src,package.json만 복붙 덮어쓰기
 *방법2 git desktop -> 클론 폴더생성 
 
 2. 
-# clone 후 작업 전 
+clone 후 작업 전 
 ㄴ npm i 
 
-*#next실행
+*next실행
 ㄴ npn run dev 
 
-*#react실행
+*react실행
 ㄴ npn start 
 
 3. git checkout -b 브랜치명
