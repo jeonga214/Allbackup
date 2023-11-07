@@ -1,0 +1,3 @@
+password: MkADhiCcp9TuUCGQ
+
+mongodb+srv://jeonga020214:<password>@cluster0.pucder0.mongodb.net/?retryWrites=true&w=majority
