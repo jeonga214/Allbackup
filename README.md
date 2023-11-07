@@ -110,3 +110,6 @@ clone 후 작업 전
 src,package.json만 복붙 덮어쓰기
 ㄴ npm i
 ㄴ npm start
+
+# pull 받기 
+git pull origin main
